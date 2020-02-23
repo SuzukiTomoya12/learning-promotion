@@ -22,3 +22,66 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# learning-promotionのDB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|username|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+### Asociation
+- has_many :reports
+- has_many :users_tags
+- has_many  :tags, through: :users_tags
+
+## reportsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|tagname|string|null: false|
+|totaltime-hour|integer|null: false|
+|totaltime-minute|integer|null: false|
+|concentration-hour|integer|null: false|
+|concentration-minute|integer|null: false|
+|content|text|null: false|
+|image|text|null: false|
+|user|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :reports_tags
+- has_many  :tags, through: :reports_tags
+
+## users_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|tag|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :tag
+
+## reports_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|report|references|null: false, foreign_key: true|
+|tag|references|null: false, foreign_key: true|
+### Association
+- belongs_to :report
+- belongs_to :tag
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|tagname|string|null: false|
+|parent-tag|references|null: false, foreign_key: true|
+### Association
+- has_many :users
+- has_many :reports
+- belongs_to :parent-tag
+
+## parent-tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|parent-tagname|string|null: false|
+### Association
+- has_many :tags
