@@ -74,10 +74,10 @@
   margin: 0 auto;
 
   .information {
-    height: 800px;
+    height: 600px;
     // background-color: rgb(220, 220, 220);
     color: black;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(140,140,140);
     padding: 40px;
     h1 {
       font-size: 36px;
@@ -89,12 +89,59 @@
   }
 
   .guide {
-    display: flex;
-    justify-content: space-between;
-    .user-type {
-      height: 200px;
-      width: 200px;
-      background-color: gray;
+    padding: 48px 96px;
+    h1 {
+      font-size: 24px;
+      color: green;
+      text-align: center;
+      padding-bottom: 32px;
+    }
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      .user-type-container {
+        height: 250px;
+        width: 250px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .user-content {
+        height: 172px;
+        width: 248px;
+        border: solid 1px gray;
+        border-radius: 10px;
+        background-color: gray;
+        background-size: cover;
+      }
+      &--grade-school-student {
+        // background-image: url(businessman.jpg);
+      }
+      &--grade-school-student:hover {
+        opacity: 0.8;
+      }
+      &--middle-and-high-school-student {
+        // background-image: url(businessman.jpg);
+      }
+      &--middle-and-high-school-student:hover {
+        opacity: 0.8;
+      }
+      &--college-student {
+        // background-image: url(businessman.jpg);
+      }
+      &--college-student:hover {
+        opacity: 0.8;
+      }
+      &--businessman {
+        background-image: url(businessman.jpg);
+      }
+      &--businessman:hover {
+        opacity: 0.8;
+      }
+      p {
+        color: black;
+        line-height: 76px;
+        text-align: center;
+      }
     }
   }
 }
@@ -103,4 +150,9 @@
   height: 50px;
   width: 100%;
   background-color: gray;
+  p {
+    color: white;
+    text-align: center;
+    line-height: 50px;
+  }
 }

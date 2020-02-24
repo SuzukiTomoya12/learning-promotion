@@ -1,0 +1,47 @@
+.header
+  .right-content
+    .right-content__logo
+      = link_to "", class: "" do
+        = icon('fas', 'signal', class: "logo-icon")
+        %span<>
+      %b Stairs
+    .right-content__how-to-use
+      %p 使い方
+  .left-content
+    .left-content__user-nav
+      .left-content__user-nav__sign-up
+        = link_to "新規登録" , "/users/sign_up"
+      .left-content__user-nav__login
+        %a ログイン
+
+.main-wrapper
+  .information
+    %h1 学びを喜びに
+    %h1 あなたの学習時間でレベルアップ体験を
+    %p 勉強をがんばるあなたへ
+    %p あなたの学習をもっとワクワクする時間に変えませんか？
+    %p Stairsはあなたの日々のがんばりを、目に見えるカタチでレベルアップさせられるサービスです。
+    %p ゲームのような感覚で学びの時間を楽しくしよう！
+  .guide
+    %h1 あなたに最適な学習ライフを提案します
+    .guide__wrapper
+      = link_to "", class: "user-type-container" do
+        .user-content.guide__wrapper--grade-school-student
+        %p 小学生の方
+      = link_to "", class: "user-type-container" do
+        .user-content.guide__wrapper--middle-and-high-school-student
+        %p 中学・高校生の方
+      = link_to "", class: "user-type-container" do
+        .user-content.guide__wrapper--college-student
+        %p 大学生の方
+      = link_to "", class: "user-type-container" do
+        .user-content.guide__wrapper--businessman
+        %p 社会人の方
+
+.popular-zone
+  .popular-zone__businessman
+    %h1 社会人ユーザーの人気タグ
+    .popular-zone__businessman--tag
+      
+.footer
+  %p Copy Right

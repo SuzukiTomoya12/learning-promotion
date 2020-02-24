@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: "tops#index"
   devise_for :users
-  get 'reports/index'
-
-  root "reports#index"
-
+  resources :reports, expect: [:index]
 end
