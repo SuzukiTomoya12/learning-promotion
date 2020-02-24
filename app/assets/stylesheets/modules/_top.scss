@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 24px;
+  box-shadow: 0px 5px 5px rgb(220, 220, 220);
+  .right-content {
+    display: flex;
+    justify-content: flex-start;
+    &__logo {
+      cursor: pointer;
+      a {
+        font-size: 24px;
+        text-decoration: none;
+        color: gold;
+        margin-right: 4px;
+      }
+      color: rgb(140,140,140);
+      font-size: 25px;
+      line-height: 64px;
+    }
+    &__how-to-use {
+      color: rgb(110,110,110);
+      font-size: 18px;
+      line-height: 64px;
+      margin-left: 32px;
+      cursor: pointer;
+    }
+    &__how-to-use:hover {
+      color: gold;
+    }
+  }
+  .left-content {
+    
+    &__user-nav {
+      display: flex;
+      justify-content: flex-end;
+      line-height: 64px;
+
+      &__sign-up {
+        margin-right: 20px;
+        
+      }
+      &__login {
+      }
+
+      a {
+        color: rgb(140,140,140);
+        border: gold solid 1.2px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: rgba(255, 239, 146, 0.699);
+        color: rgb(140,140,140);
+        // font-weight: bold;
+      }
+    }
+  }
+}
+
+.main-wrapper {
+  height: 1500px;
+  width: 100%;
+  // background-color: #e3e3e3;
+  color: rgb(100,100,100);
+  margin: 0 auto;
+
+  .information {
+    height: 800px;
+    // background-color: rgb(220, 220, 220);
+    color: black;
+    border-bottom: 1px solid gray;
+    padding: 40px;
+    h1 {
+      font-size: 36px;
+      color: #2b546a;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .guide {
+    display: flex;
+    justify-content: space-between;
+    .user-type {
+      height: 200px;
+      width: 200px;
+      background-color: gray;
+    }
+  }
+}
+
+.footer {
+  height: 50px;
+  width: 100%;
+  background-color: gray;
+}

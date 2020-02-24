@@ -1,0 +1,36 @@
+.header
+  .right-content
+    .right-content__logo
+      = link_to "#", class: "" do
+        = icon('fas', 'signal', class: "logo-icon")
+        %span<>
+      %b Stairs
+    .right-content__how-to-use
+      %p 使い方
+  .left-content
+    .left-content__user-nav
+      .left-content__user-nav__sign-up
+        %a 新規登録
+      .left-content__user-nav__login
+        %a ログイン
+
+.main-wrapper
+  .information
+    -# = image_tag 'topimage.jpg', width: '100%', class: 'information--image'
+    %h1 学びを喜びに
+    %h1 あなたの学習時間でレベルアップ体験を
+    %p 勉強をがんばるあなたへ
+    %p あなたの学習をもっとワクワクする時間に変えませんか？
+    %p Stairsはあなたの日々のがんばりを、目に見えるカタチでレベルアップさせられるサービスです。
+    %p ゲームのような感覚で学びの時間を楽しくしよう！
+  .guide
+    .user-type.guide__grade-school-student
+      %p 小学生の方
+    .user-type.guide__middle-and-high-school-student
+      %p 中学・高校生の方
+    .user-type.guide__college-student
+      %p 大学生の方
+    .user-type.guide__businessman
+      %p 社会人の方
+
+.footer
