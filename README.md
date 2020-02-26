@@ -27,7 +27,7 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|username|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
 ### Asociation
@@ -39,12 +39,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |tagname|string|null: false|
-|totaltime-hour|integer|null: false|
-|totaltime-minute|integer|null: false|
-|concentration-hour|integer|null: false|
-|concentration-minute|integer|null: false|
-|content|text|null: false|
-|image|text|null: false|
+|total_time_hour|integer|null: false|
+|total_time_minute|integer|null: false|
+|concentration_time_hour|integer|null: false|
+|concentration_time_minute|integer|null: false|
+|content|text||
+|image|text||
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
