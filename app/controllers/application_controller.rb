@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
 
   # ログイン前にTOPページを表示するためのメソッド
   def after_sign_in_path_for(resource)
-    reports_path
+    root_path
   end
   
   def after_sign_out_path_for(resource)
-    reports_path
+    root_path
   end
 
   protected

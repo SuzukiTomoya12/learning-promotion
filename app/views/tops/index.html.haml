@@ -1,18 +1,24 @@
 .header
-  .right-content
-    .right-content__logo
-      = link_to "", class: "" do
-        = icon('fas', 'signal', class: "logo-icon")
-        %span<>
-      %b Stairs
-    .right-content__how-to-use
-      %p 使い方
-  .left-content
-    .left-content__user-nav
-      .left-content__user-nav__sign-up
-        = link_to "新規登録" , "/users/sign_up"
-      .left-content__user-nav__login
-        %a ログイン
+  = render 'tops/header'
+  -# .left-content
+  -#   .left-content__logo
+  -#     = link_to "/", class: "" do
+  -#       = icon('fas', 'signal', class: "logo-icon")
+  -#       %span<>
+  -#       %b Stairs
+  -#   .left-content__how-to-use
+  -#     %p 使い方
+  -# .right-content
+  -#   .right-content__user-nav
+  -#     - if user_signed_in?
+  -#       .right-content__user-nav__logout.btn
+  -#         = link_to "ログアウト", destroy_user_session_path, method: :delete
+  -#         = link_to "マイページ", user_path(current_user)
+  -#     - else
+  -#       .right-content__user-nav__sign-up.btn
+  -#         = link_to "新規登録" , new_user_registration_path
+  -#       .right-content__user-nav__login.btn
+  -#         = link_to "ログイン" , new_user_session_path
 
 .main-wrapper
   .information
@@ -37,11 +43,26 @@
       = link_to "", class: "user-type-container" do
         .user-content.guide__wrapper--businessman
         %p 社会人の方
+  .popular-zone
+    .popular-zone__businessman.title
+      %h1 社会人ユーザーの人気タグ
+      %p あなたに合ったユーザータイプを選ぶことで、最適な学習ライフ
+      .popular-zone__businessman__contents
 
-.popular-zone
-  .popular-zone__businessman
-    %h1 社会人ユーザーの人気タグ
-    .popular-zone__businessman--tag
-      
+        .popular-zone__businessman__contents__item
+          .popular-zone__businessman__contents__item__tag
+            %p.popular-zone__businessman__contents__item--child-tag Python
+            %p.popular-zone__businessman__contents__item--parent-tag プログラミング
+          %p.popular-zone__businessman__contents__item--description プログラミング言語の１つで、近年話題のAI（人工知能）の開発に欠かせない機械学習を行える言語。
+          %img.popular-zone__businessman__contents__item--image
+          .popular-zone__businessman__contents__item--users
+            = icon('fas', 'user', class: "icon")
+          .popular-zone__businessman__contents__item--reports
+
+          .popular-zone__businessman__contents__item--trend
+            %p 人気急上昇
+    -# 1つできたらコピー
+
+
 .footer
   %p Copy Right

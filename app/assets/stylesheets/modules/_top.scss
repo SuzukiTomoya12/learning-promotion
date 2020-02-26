@@ -2,17 +2,19 @@
   box-sizing: border-box;
 }
 
-.header {
+.header-container {
   height: 64px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0px 24px;
   box-shadow: 0px 5px 5px rgb(220, 220, 220);
-  .right-content {
+  .left-content {
     display: flex;
     justify-content: flex-start;
     &__logo {
+      font-size: 25px;
+      line-height: 64px;
       cursor: pointer;
       a {
         font-size: 24px;
@@ -20,9 +22,9 @@
         color: gold;
         margin-right: 4px;
       }
-      color: rgb(140,140,140);
-      font-size: 25px;
-      line-height: 64px;
+      b {
+        color: rgb(140,140,140);
+      }
     }
     &__how-to-use {
       color: rgb(110,110,110);
@@ -35,19 +37,11 @@
       color: gold;
     }
   }
-  .left-content {
-    
+  .right-content {
     &__user-nav {
       display: flex;
       justify-content: flex-end;
       line-height: 64px;
-
-      &__sign-up {
-        margin-right: 20px;
-        
-      }
-      &__login {
-      }
 
       a {
         color: rgb(140,140,140);
@@ -56,11 +50,11 @@
         cursor: pointer;
         padding: 8px 16px;
         text-decoration: none;
+        margin-left: 20px;
       }
       a:hover {
         background-color: rgba(255, 239, 146, 0.699);
         color: rgb(140,140,140);
-        // font-weight: bold;
       }
     }
   }
@@ -89,7 +83,9 @@
   }
 
   .guide {
+    height: 400px;
     padding: 48px 96px;
+    border-bottom: 1px solid rgb(140,140,140);
     h1 {
       font-size: 24px;
       color: green;
@@ -114,37 +110,59 @@
         background-size: cover;
       }
       &--grade-school-student {
-        // background-image: url(businessman.jpg);
+        background-image: url(grade-school-student.jpg);
       }
       &--grade-school-student:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
       &--middle-and-high-school-student {
         // background-image: url(businessman.jpg);
       }
       &--middle-and-high-school-student:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
       &--college-student {
         // background-image: url(businessman.jpg);
       }
       &--college-student:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
       &--businessman {
         background-image: url(businessman.jpg);
       }
       &--businessman:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
       p {
         color: black;
         line-height: 76px;
         text-align: center;
       }
+      p:hover {
+        color: #2b546a;
+      }
     }
   }
+  .popular-zone {
+    height: 400px;
+    padding: 40px;
+    &__businessman {
+  
+    }
+    .title {
+      color: #2b546a;
+      font-size: 24px;
+    }
+  
+  }
+
+
 }
+
+
+
+
+
 
 .footer {
   height: 50px;

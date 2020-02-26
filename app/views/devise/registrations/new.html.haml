@@ -1,12 +1,31 @@
-.signup-page
-  .title
-    %h1 アカウントを作成
-  .attention
-    %p アカウントを作成すると、利用規約およびプライバシーポリシーに同意するものとします。
-  = link_to "TOPへ", root_path
-  .form
-    %label
-    %text_field
-  .login
-    %p すでにアカウントをお持ちの方
-    %a ログイン
+.devise-page.signup-page
+  -# .header
+  -# = render ヘッダー
+  .wrapper
+    .heading
+      %h2 アカウントを作成
+    .devise-form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "ユーザー名", class: "input-area"
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "input-area"
+        .field
+          = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "input-area"
+        .field
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（確認用）", class: "input-area"
+        .actions
+          = f.submit "登録", class: "submit-btn"
+
+    %p.attention
+      アカウントを作成すると、
+      %span.agreement<>
+        利用規約
+      および
+      %span.privacy-policy<>
+        プライバシーポリシー
+      に同意するものとします。
+
+    .devise-links
+      = render "devise/shared/links"

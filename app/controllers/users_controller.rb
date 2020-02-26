@@ -6,15 +6,19 @@ class UsersController < ApplicationController
   def create
   end
   
-  def edit
-  end
+#   def edit
+#   end
 
-  def update
-  end
+#   def update
+#   end
 
-  private
-  def user_params
-    
-  end
+    def show
+      @user = User.find(params[:id])
+      # @report = @user.reports
+    end
+
+#   private
+#   def user_params
+#   end
 
 end
