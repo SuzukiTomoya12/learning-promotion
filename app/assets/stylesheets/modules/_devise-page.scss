@@ -6,7 +6,7 @@ a {
 }
 
 .devise-page {
-  height: 500px;
+  height: 600px;
   width: 500px;
   background-color: rgb(245, 245, 245);
   text-align: center;
@@ -23,6 +23,11 @@ a {
     }
     .devise-form {
       // height: 250px;
+      .error-messages {
+        font-size: 14px;
+        color: rgb(29, 57, 85);
+        margin-bottom: 10px;
+      }
       .input-area {
         height: 50px;
         width: 250px;

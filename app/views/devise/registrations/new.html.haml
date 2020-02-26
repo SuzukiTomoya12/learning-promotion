@@ -1,12 +1,13 @@
 .devise-page.signup-page
   -# .header
-  -# = render ヘッダー
+  -#   = render 'tops/header'
   .wrapper
     .heading
       %h2 アカウントを作成
     .devise-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+        .error-messages
+          = render "devise/shared/error_messages", resource: resource
         .field
           = f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "ユーザー名", class: "input-area"
         .field
