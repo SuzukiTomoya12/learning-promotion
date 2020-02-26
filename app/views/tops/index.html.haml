@@ -1,24 +1,5 @@
 .header
   = render 'tops/header'
-  -# .left-content
-  -#   .left-content__logo
-  -#     = link_to "/", class: "" do
-  -#       = icon('fas', 'signal', class: "logo-icon")
-  -#       %span<>
-  -#       %b Stairs
-  -#   .left-content__how-to-use
-  -#     %p 使い方
-  -# .right-content
-  -#   .right-content__user-nav
-  -#     - if user_signed_in?
-  -#       .right-content__user-nav__logout.btn
-  -#         = link_to "ログアウト", destroy_user_session_path, method: :delete
-  -#         = link_to "マイページ", user_path(current_user)
-  -#     - else
-  -#       .right-content__user-nav__sign-up.btn
-  -#         = link_to "新規登録" , new_user_registration_path
-  -#       .right-content__user-nav__login.btn
-  -#         = link_to "ログイン" , new_user_session_path
 
 .main-wrapper
   .information
@@ -66,3 +47,4 @@
 
 .footer
   %p Copy Right
+  -# = link_to "タグを登録", _path

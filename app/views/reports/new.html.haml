@@ -1,4 +1,14 @@
 .report
   %h2 レポート作成
+  .report__wrapper
+    = form_for @report do |f|
+      .field
+        = f.text_field :tagname, autofocus: true, placeholder: "tag", class: "input-area"
+      .field
+        = f.text_field :total_time_hour, autofocus: true, class: "input-area"
+      .field
+        = f.text_field :total_time_minute, autofocus: true, class: "input-area"
+      .field
+        = f.text_field :tagname, autofocus: true, placeholder: "tag", class: "input-area"
 
-  = link_to "マイページに戻る", root_path
+  = link_to "マイページに戻る", user_path(current_user)
