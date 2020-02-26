@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200226053930) do
+ActiveRecord::Schema.define(version: 20200226102052) do
+
+  create_table "report_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "report_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_report_tags_on_report_id", using: :btree
+    t.index ["tag_id"], name: "index_report_tags_on_tag_id", using: :btree
+  end
 
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "tagname",                                 null: false
@@ -23,6 +32,15 @@ ActiveRecord::Schema.define(version: 20200226053930) do
     t.integer  "user_id",                                 null: false
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+  end
+
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "tagname",       null: false
+    t.integer  "parent_tag_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["parent_tag_id"], name: "index_tags_on_parent_tag_id", using: :btree
+    t.index ["tagname"], name: "index_tags_on_tagname", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,4 +57,6 @@ ActiveRecord::Schema.define(version: 20200226053930) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "report_tags", "reports"
+  add_foreign_key "report_tags", "tags"
 end
