@@ -3,7 +3,6 @@
     .progress-calendar__heading
       %h1 学習カレンダー
     .progress-calendar__day-heading
-      -# - abbr_day_names.each("%") 
       %p 日
       %p 月
       %p 火
@@ -11,9 +10,21 @@
       %p 木
       %p 金
       %p 土
-      
-    .progress-calendar__month-container
-    .progress-calendar__row
+    .progress-calendar__date
+      .progress-calendar__date--month
 
-  .user-page__sidebar__btn-area
-    = link_to "レポートを作成する", new_report_path
+      .progress-calendar__date--day
+        - (1..7).each do |i|
+          %div.week
+            - (1..5).each do |i|
+              %div.row
+
+  .action-area
+    .action-area__start-learning.btn-container
+      = link_to "学習を始める", root_path, class: "btn"
+    .action-area__create-report.btn-container
+      = link_to "レポートを作成する", new_report_path, class: "btn"
+    .action-area__exchange-items.btn-container
+      = link_to "アイテム交換", root_path, class: "btn"
+    .action-area__create-report.btn-container
+      = link_to "他のアカウントと連携", root_path, class: "btn"
