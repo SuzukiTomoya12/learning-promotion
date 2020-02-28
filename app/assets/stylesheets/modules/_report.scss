@@ -1,16 +1,263 @@
 
 .report {
-  height: 1500px;
-  width: 1000px;
+  height: 800px;
+  width: 700px;
   background-color: rgb(245, 245, 245);
+  border-radius: 10px;
   margin: 100px auto;
+  position: relative;
+  
   h2 {
     font-size: 24px;
     color: rgb(29, 57, 85);
     text-align: center;
-    padding: 50px 0px 20px;
   }
   &__wrapper {
+    padding: 0px 96px;
 
+    // このページ全体への設定（アイコン設定）
+    .icon-item {
+      // height: 20px;
+      display: flex;
+      justify-content: flex-start;
+      line-height: 20px;
+      font-size: 16px;
+      margin-bottom: 16px;
+      .heading {
+        font-size: 18px;
+      }
+      .icon {
+        width: 16px;
+        color: rgb(119, 179, 240);
+        font-size: 16px;
+        margin-top: 3px;
+        margin-right: 8px;
+        text-align: center;
+      }
+      .icon:hover {
+        color: rgb(55, 142, 230)
+      }
+    }
+    .input-area {
+      display: inline-block;
+      height: 30px;
+      color: rgb(60,60,60);
+      font-size: 12px;
+      padding-left: 5px;
+    }
+    .input-area:focus {
+      outline: solid 1px rgb(236, 108, 108);
+    }
+    // ↑ここまで
+    .report-heading {
+      padding: 50px 0px 20px;
+    }
+    .tag-container {
+      height: 40px;
+      font-size: 16px;
+      color: rgb(80,80,80);
+      line-height: 40px;
+      display: flex;
+      justify-content: flex-start;
+      &__heading {
+        margin-top: 8px;
+        p {
+          margin-top: 2px;
+        }
+      }
+      &__tag-search {
+        width: 300px;
+        margin-left: 30px;
+        position: relative;
+        &--input {
+          font-size: 14px;
+          padding: 9px 0px 6px 30px;
+        }
+        input:focus {
+          outline: none;
+          outline: solid 1.4px rgb(236, 108, 108);
+        }
+        .icon {
+          position: absolute;
+          left: 10px;
+          line-height: 40px;
+        }
+      }
+    }
+    .learning-time-container {
+      &__heading {
+        // margin-bottom: 16px;
+      }
+      &__main {
+        width: 500px;
+        padding: 0px 24px;
+        display: flex;
+        justify-content: flex-start;
+        &--all-time {
+          width: 250px;
+        }
+        &--concentration-time {
+          width: 250px;
+        }
+        .top {
+          height: 30px;
+          width: 200px;
+          display: flex;
+          justify-content: flex-start;
+        }
+        .bottom {
+          height: 50px;
+          width: 200px;
+          display: flex;
+          justify-content: flex-start;
+          .item {
+            color: rgb(100,100,100);
+            font-size: 12px;
+            text-align: center;
+          }
+          .break {
+            text-align: center;
+            margin-top: 23px;
+          }
+          .first-break {
+            width: 12px;
+          }
+          .second-break {
+            width: 12px;
+          }
+          .third-break {
+            width: 20px;
+            margin-top: 24px;
+          }
+        }
+      }
+      .input-area {
+        width: 30px;
+      }
+    }
+    .output-container {
+      &__textarea {
+        padding: 0px 24px;
+        .input-area {
+          height: 100px;
+          width: 450px;
+          padding: 5px;
+        }
+      }
+    }
+    .image-container {
+      &__main {
+        height: 100px;
+        width: 100px;
+        border-radius: 20%;
+        background-color: rgb(230,230,230);
+        margin-left: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--add-icon {
+          height: 55px;
+          width: 55px;
+          // border: 1px solid rgb(180,180,180);
+          border-radius: 50%;
+          background-color: rgb(210,210,210);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .icon {
+            // display: block;
+            // width: 100px;
+            color: rgba(120,120,120,0.7);
+            font-size: 20px;
+            line-height: 100px;
+          }
+        }
+        &--add-icon:hover {
+          color: rgb(100,100,100);
+          background-color: rgb(180,180,180);
+        }
+        #report_image {
+          display: none;
+        }
+      }
+    }
+    .report-container {
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .submit-btn {
+      text-align: center;
+      .btn {
+        background-color: rgb(236, 108, 108);
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        border-style: none;
+        border-radius: 5px;
+        box-shadow: 0px 5px rgb(202, 72, 72) ;
+        padding: 10px 30px;
+      }
+      .btn:hover {
+        opacity: 0.9;
+      }
+      .btn:active {
+        box-shadow: none;
+        position: relative;
+        top: 5px;
+      }
+      .btn:focus {
+        outline: none;
+      }
+    }
+  }
+
+  // pタグ共通のcss
+  p {
+    color: rgb(60,60,60);
+  }
+
+  // インフォメーションアイコンのcss
+  .info {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: rgb(230,230,230);
+    // border: 1px rgb(180,180,180) solid;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    .info-icon {
+      color: rgba(120,120,120,0.7);
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  .info:hover {
+    background-color: rgb(200,200,200);
+  }
+
+  // ストップアイコンのcss
+  &__stop-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(230,230,230);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    .icon {
+      color: rgba(120,120,120,0.7);
+      font-size: 40px;
+      line-height: 50px;
+    }
+    .icon:hover {
+      color: rgb(100,100,100);
+    }
+  }
+  &__stop-icon:hover {
+    background-color: rgb(200,200,200);
   }
 }

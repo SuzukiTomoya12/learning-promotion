@@ -15,7 +15,6 @@
       &__top {
         display: flex;
         justify-content: flex-start;
-        // background-color: white;
         &--left-container {
           .avatar {
             height: 120px;
@@ -141,8 +140,10 @@
         .profile-field {
           height: 100px;
           width: 500px;
+          font-size: 14px;
           background-color: white;
-          border-radius: 20px;
+          border: 1px solid rgb(180,180,180);
+          border-radius: 10px;
           padding: 10px;
         }
       }
@@ -169,14 +170,14 @@
         width: 245px;
         display: flex;
         justify-content: flex-start;
+        margin-left: 55px;
+      }
+      p {
+        width: 30px;
         color: rgba(43,84,106,0.6);
         font-size: 14px;
-        margin-left: 55px;
-        p {
-          width: 30px;
-          text-align: center;
-          margin-left: 5px;
-        }
+        text-align: center;
+        margin-left: 5px;
       }
       &__date {
         display: flex;
@@ -184,7 +185,9 @@
         &--month {
           height: 175px;
           width: 55px;
-          background-color: rgba(255, 239, 146, 0.9);
+          // background-color: rgba(255, 239, 146, 0.9);
+          line-height: 175px;
+          padding-left: 8px;
         }
         &--day {
           display: flex;
@@ -203,14 +206,14 @@
       }
     }
     .action-area {
-      height: 200px;
+      height: 300px;
       a {
         display: block;
-        width: 250px;
+        width: 240px;
       }
       .btn-container {
         height: 50px;
-        margin: 10px 25px 0px 25px;
+        margin: 10px 0px 0px 60px;
         text-align: center;
       }
       .btn {

@@ -1,14 +1,89 @@
 .report
-  %h2 レポート作成
+  .report__stop-icon
+    = link_to user_path(current_user) do
+      = icon('fas', 'times', class: 'icon')
   .report__wrapper
-    = form_for @report do |f|
-      .field
-        = f.text_field :tagname, autofocus: true, placeholder: "tag", class: "input-area"
-      .field
-        = f.text_field :total_time_hour, autofocus: true, class: "input-area"
-      .field
-        = f.text_field :total_time_minute, autofocus: true, class: "input-area"
-      .field
-        = f.text_field :tagname, autofocus: true, placeholder: "tag", class: "input-area"
+    .report-heading
+      %h2 レポート作成
 
-  = link_to "マイページに戻る", user_path(current_user)
+    = form_for @report do |f|
+      .tag-container.report-container
+        .tag-container__heading.icon-item
+          = icon('fas', 'tags', class: 'icon')
+          %p.heading タグ
+          .info
+            = icon('fas', 'info', class: 'info-icon')
+        .tag-container__tag-search
+          %input.tag-container__tag-search--input{ placeholder: "タグを検索", autofocus: true, type: "text"}/
+          = icon('fas', 'search', class: 'icon')
+        %ul
+          -# %li jQueryで選択されたタグをlistで追加していく
+
+      .learning-time-container.report-container
+        .learning-time-container__heading.icon-item
+          = icon('fas', 'clock', class: 'icon')
+          %p.heading 学習時間
+          .info
+            = icon('fas', 'info', class: 'info-icon')
+        .learning-time-container__main
+          .learning-time-container__main--all-time
+            .top
+              %p 開始から終了までの時間
+            .bottom
+              .hour-area
+                %p.item 時間
+                .field
+                  = f.text_field :total_time_hour, autofocus: true, class: "input-area"
+              .break.first-break
+                %p :
+              .minute-area
+                %p.item 分
+                .field
+                  = f.text_field :total_time_minute, autofocus: true, class: "input-area"
+              .break.second-break
+                %p :
+              .break.third-break
+                %p 00
+          .learning-time-container__main--concentration-time
+            .top
+              %p 集中できた時間
+            .bottom
+              .hour-area
+                %p.item 時間
+                .field
+                  = f.text_field :concentration_time_hour, autofocus: true, class: "input-area"
+              .break.first-break
+                %p :
+              .minute-area
+                %p.item 分
+                .field
+                  = f.text_field :concentration_time_minute, autofocus: true, class: "input-area"
+              .break.second-break
+                %p :
+              .break.third-break
+                %p 00
+      .output-container.report-container
+        .output-container__heading.icon-item
+          = icon('fas', 'pen', class: 'icon')
+          %p.heading 学習内容
+          .info
+            = icon('fas', 'info', class: 'info-icon')
+        .output-container__textarea
+          .field
+            = f.text_area :content, autofocus: true, class: "input-area"
+      .image-container.report-container
+        .image-container__heading.icon-item
+          = icon('fas', 'images', class: 'icon')
+          %p.heading 画像
+          .info
+            = icon('fas', 'info', class: 'info-icon')
+        .image-container__main
+          .image-container__main--image
+            -# 画像を追加していく
+          .image-container__main--add-icon
+            = f.label :image, class: "mask" do
+              = icon('fas', 'plus', class: "icon")
+              = f.file_field :image, autofocus: true, class: ""
+      .submit-btn
+        = f.submit "作成", class: "btn"
+
