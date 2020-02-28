@@ -1,0 +1,58 @@
+.user-page__main
+  .information
+    .information__top
+      .information__top--left-container
+        .avatar
+          = icon('fas', 'user', class: "avatar-icon")
+          %span<>
+
+      .information__top--right-container
+        .username
+          %p
+            = current_user.username
+        .level
+          %p Lv.
+          %p 100
+        .experience
+          %p.item 経験値
+          %p 123456
+        .next-level
+          %p.item 次のレベルまで
+          %p.until あと
+          %p 5620
+        
+
+    .information__middle
+      .start-date.icon-item
+        = icon('far', 'calendar-alt', class: 'icon')
+        %p
+          = current_user.created_at.strftime("%Y年%-m月")
+          %span<>
+          から利用しています
+      .coin.icon-item
+        = icon('fas', 'coins', class: 'icon')
+        %p 1200
+      .award.icon-item
+        = icon('fas', 'award', class: 'icon')
+        %p 称号：凄腕エンジニア
+      .equipment.icon-item
+        = icon('fas', 'feather-alt', class: 'icon')
+        %p 装備：天使の羽ペン
+      .tag-container
+        .tag.icon-item
+          = icon('fas', 'tags', class: 'icon')
+          %p 学習中のタグ
+        %ul.tag-container--list
+          %li Python
+          %li Ruby
+          %li Excel
+
+    .information__bottom
+      .profile-head
+        .icon-item
+          = icon('fas', 'user-circle', class: 'icon profile-icon')
+          %p プロフィール
+        %a.btn 編集
+      .profile-field
+        %p プログラミングとビジネススキルの勉強をはじめました。
+        

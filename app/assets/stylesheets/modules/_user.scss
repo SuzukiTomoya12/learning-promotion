@@ -1,0 +1,173 @@
+
+.user-page {
+  height: 1000px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  &__main {
+    width: 60%;
+    .information {
+      height: 500px;
+      background-color: rgb(245, 250, 255);
+      border-radius: 40px;
+      padding: 24px 48px;
+      &__top {
+        display: flex;
+        justify-content: flex-start;
+        // background-color: white;
+        &--left-container {
+          .avatar {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-color: rgb(220,220,220);
+            border: 1px solid rgb(200,200,200);
+            display: flex;
+            justify-content: center;
+            .avatar-icon {
+              color: white;
+              font-size: 70px;
+              line-height: 120px;
+            }
+          }
+        }
+        &--right-container {
+          margin-top: 10px;
+          margin-left: 50px;
+          color: rgb(80,80,80);
+          .username {
+            color: #2b546a;
+            font-size: 18px;
+          }
+          .level {
+            font-size: 16px;
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 5px;
+          }
+          .experience {
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+          }
+          .next-level {
+            font-size: 16px;
+            display: flex;
+            justify-content: flex-start;
+            .until {
+              font-size: 14px;
+              margin-right: 5px;
+              padding-top: 3px;
+            }
+          }
+          .item {
+            margin-right: 40px;
+          }
+        }
+      }
+      &__middle {
+        padding: 20px 0px 0px 40px;
+        .tag-container {
+          font-size: 16px;
+          color: rgb(80,80,80);
+          ul {
+            display: flex;
+            justify-content: flex-start;
+          }
+          li {
+            height: 24px;
+            width: auto;
+            background: linear-gradient(225deg,transparent 10px, rgba(255, 239, 146, 0.9) 10px),
+                        linear-gradient(315deg,transparent 10px, rgba(255, 239, 146, 0.9) 10px);
+            background-position: top, bottom;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            padding:0px  20px 0px 10px;
+            margin-right: 5px;
+          }
+        }
+      }
+      
+
+      .icon-item {
+        height: 20px;
+        display: flex;
+        justify-content: flex-start;
+        line-height: 20px;
+        font-size: 16px;
+        margin-bottom: 5px;
+        p {
+          color: rgb(100,100,100);
+        }
+        .icon {
+          width: 16px;
+          color: rgb(119, 179, 240);
+          font-size: 14px;
+          margin-top: 3px;
+          margin-right: 8px;
+          text-align: center;
+        }
+        .icon:hover {
+          color: rgb(55, 142, 230)
+
+        }
+      }
+      
+      &__bottom {
+        height: 200px;
+        padding: 20px 0px 0px 40px;
+        .profile-head {
+          display: flex;
+          justify-content: flex-start;
+          position: relative;
+          a {
+            height: auto;
+            font-size: 12px;
+            color: rgb(100,100,100);
+            margin-left: 16px;
+            padding: 0px 10px;
+            border: 1px solid rgb(236, 108, 108);
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            left: 150px;
+          }
+          a:hover {
+            background-color: rgba(236, 108, 108, 0.5);
+          }
+        }
+        .profile-field {
+          height: 100px;
+          width: 500px;
+          background-color: white;
+          border-radius: 20px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+
+
+  &__sidebar {
+    width: 30%;
+    // background-color: rgb(230,230,200);
+
+    .progress-calendar {
+      height: 300px;
+      &__heading {
+
+      }
+      &__day-heading {
+        display: flex;
+        justify-content: flex-start;
+        p {
+          margin-left: 5px;}
+      }
+    }
+
+
+    // color: rgba(43,84,106,0.6);
+  }
+}

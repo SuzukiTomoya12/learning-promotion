@@ -1,0 +1,2 @@
+class ParentTag < ApplicationRecord
+end
