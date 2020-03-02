@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 20200228013857) do
   end
 
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tagname",                                 null: false
+    t.string   "tagname"
     t.integer  "total_time_hour",                         null: false
     t.integer  "total_time_minute",                       null: false
     t.integer  "concentration_time_hour",                 null: false
     t.integer  "concentration_time_minute",               null: false
     t.text     "content",                   limit: 65535
     t.text     "image",                     limit: 65535
-    t.integer  "user_id",                                 null: false
+    t.integer  "user_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
   end

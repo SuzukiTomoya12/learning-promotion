@@ -13,10 +13,14 @@
           %p.heading タグ
           .info
             = icon('fas', 'info', class: 'info-icon')
-        .tag-container__tag-search
-          %input.tag-container__tag-search--input{ placeholder: "タグを検索", autofocus: true, type: "text"}/
-          = icon('fas', 'search', class: 'icon')
-        %ul
+        .tag-container__main
+          .field
+            = f.text_field :tagname, autofocus: true, class: "input-area"
+        -# インクリメンタルサーチでタグを選択できるようにする
+        -# .tag-container__tag-search
+        -#   %input.tag-container__tag-search--input{ placeholder: "タグを検索", autofocus: true, type: "text"}/
+        -#   = icon('fas', 'search', class: 'icon')
+        -# %ul
           -# %li jQueryで選択されたタグをlistで追加していく
 
       .learning-time-container.report-container
