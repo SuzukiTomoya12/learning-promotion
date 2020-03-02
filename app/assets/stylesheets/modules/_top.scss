@@ -41,24 +41,60 @@
     &__user-nav {
       display: flex;
       justify-content: flex-end;
-      line-height: 64px;
-
-      a {
-        color: rgb(140,140,140);
-        border: gold solid 1.2px;
-        border-radius: 5px;
-        cursor: pointer;
-        padding: 8px 16px;
-        text-decoration: none;
-        margin-left: 20px;
+      // line-height: 64px;
+        position: relative;
+      .btn {
+        line-height: 64px;
+        a {
+          color: rgb(140,140,140);
+          text-decoration: none;
+          cursor: pointer;
+          border: gold solid 1.2px;
+          border-radius: 5px;
+          padding: 8px 16px;
+          margin-left: 20px;
+        }
+        a:hover {
+          background-color: rgba(255, 239, 146, 0.699);
+          color: rgb(140,140,140);
+        }
       }
-      a:hover {
-        background-color: rgba(255, 239, 146, 0.699);
-        color: rgb(140,140,140);
+      &--user-list {
+        
+        line-height: 64px;
+        cursor: default;
       }
+      .user-pulldown-list {
+        height: 300px;
+        width: 160px;
+        background-color: white;
+        box-shadow: 0px 3px 5px 2px rgb(220, 220, 220);
+        position: absolute;
+        top: 64px;
+        right: 0px;
+        z-index: 100;
+        display: none;
+        a {
+          display: block;
+          height: 32px;
+          color: rgb(140,140,140);
+          line-height: 32px;
+          padding-left: 16px;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        a:hover {
+          background-color: rgb(240,240,240);
+          color: #2b546a;;
+        }
+      }
+        // .user-pulldown-list:hover {
+        //   background-color: white;
+        // }
     }
   }
 }
+
 
 .main-wrapper {
   height: 1500px;
@@ -147,13 +183,11 @@
     height: 400px;
     padding: 40px;
     &__businessman {
-  
     }
     .title {
       color: #2b546a;
       font-size: 24px;
     }
-  
   }
 
 

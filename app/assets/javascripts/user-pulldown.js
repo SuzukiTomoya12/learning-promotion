@@ -1,0 +1,9 @@
+$(function(){
+  $('.right-content__user-nav').hover(
+    function(){
+      $('.user-pulldown-list').show();
+    },
+    function(){
+      $('.user-pulldown-list').hide();
+    });
+});

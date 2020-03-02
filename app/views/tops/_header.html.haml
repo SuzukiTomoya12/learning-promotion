@@ -10,9 +10,16 @@
   .right-content
     .right-content__user-nav
       - if user_signed_in?
-        .right-content__user-nav__logout.btn
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-          = link_to "マイページ", user_path(current_user)
+        .right-content__user-nav--user-list
+          = icon('fas', 'user', class: "user-icon")
+          %span<>
+          = current_user.username
+        .user-pulldown-list
+          = link_to "マイページ", user_path(current_user), class: "user-links"
+          = link_to "お知らせ", root_path, class: "user-links"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-links"
+          = link_to "パスワードの変更", edit_user_registration_path, class: "user-links"
+          -# = link_to "名前の変更", edit_user_path, class: "user-links"
       - else
         .right-content__user-nav__sign-up.btn
           = link_to "新規登録" , new_user_registration_path
