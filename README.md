@@ -51,7 +51,16 @@ Things you may want to cover:
 - has_many :reports_tags
 - has_many  :tags, through: :reports_tags
 
-## users_tagsテーブル
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|ancestry|string||
+### Association
+- has_many :reports
+
+<!-- ## users_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
@@ -84,4 +93,4 @@ Things you may want to cover:
 |------|----|-------|
 |parent-tagname|string|null: false|
 ### Association
-- has_many :tags
+- has_many :tags -->
