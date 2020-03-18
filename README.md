@@ -30,6 +30,12 @@ Things you may want to cover:
 |username|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
+|birthday|string||
+|avatar|text||
+|profile|text||
+|sex|string||
+|level|integer||
+|experience|integer||
 ### Asociation
 - has_many :reports
 - has_many :users_tags
