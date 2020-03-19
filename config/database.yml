@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: learning-promotion_production
-  username: learning-promotion
-  password: <%= ENV['LEARNING-PROMOTION_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
