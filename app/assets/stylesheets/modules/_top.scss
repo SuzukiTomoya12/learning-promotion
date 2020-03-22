@@ -99,17 +99,15 @@
 .main-wrapper {
   height: 1500px;
   width: 100%;
-  // background-color: #e3e3e3;
   color: rgb(100,100,100);
   margin: 0 auto;
 
   .information {
     height: 600px;
-    // background-color: rgb(220, 220, 220);
     color: black;
     border-bottom: 1px solid rgb(140,140,140);
     padding: 40px;
-    h1 {
+    &__heading {
       font-size: 36px;
       color: #2b546a;
     }
@@ -142,47 +140,45 @@
         width: 248px;
         border: solid 1px gray;
         border-radius: 10px;
-        background-color: gray;
         background-size: cover;
+        // &:hover {
+        //   opacity: 0.7;
+        // }
       }
-      &--grade-school-student {
-        background-image: url(grade-school-student.jpg);
+      #unimplemented {
+        background-color:rgba(0,0,0,0.8);
+        background-blend-mode: darken;
       }
-      &--grade-school-student:hover {
-        opacity: 0.7;
+      &--elementary-school {
+        background-image: url(elementary-school.jpg);
       }
-      &--middle-and-high-school-student {
-        background-image: url(high-school-student.jpg);
-      }
-      &--middle-and-high-school-student:hover {
-        opacity: 0.7;
+      &--student {
+        background-image: url(student.jpg);
       }
       &--college-student {
         background-image: url(college-student.jpg);
       }
-      &--college-student:hover {
+      &--society {
+        background-image: url(society.jpg);
+      }
+      &--society:hover {
         opacity: 0.7;
       }
-      &--businessman {
-        background-image: url(businessman.jpg);
-      }
-      &--businessman:hover {
-        opacity: 0.7;
-      }
-      p {
+      .user-type {
         color: black;
         line-height: 76px;
         text-align: center;
-      }
-      p:hover {
-        color: #2b546a;
+        &:hover {
+          color: #2b546a;
+          font-weight: bold;
+        }
       }
     }
   }
   .popular-zone {
     height: 400px;
     padding: 40px;
-    &__businessman {
+    &__society {
     }
     .title {
       color: #2b546a;
