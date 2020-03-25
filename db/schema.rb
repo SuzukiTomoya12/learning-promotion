@@ -10,60 +10,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200228013857) do
-
-  create_table "parent_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "parent_tagname",               null: false
-    t.text     "description",    limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  create_table "report_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "report_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["report_id"], name: "index_report_tags_on_report_id", using: :btree
-    t.index ["tag_id"], name: "index_report_tags_on_tag_id", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20200324081904) do
 
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tagname"
+    t.text     "content",                   limit: 65535
+    t.text     "image",                     limit: 65535
     t.integer  "total_time_hour",                         null: false
     t.integer  "total_time_minute",                       null: false
     t.integer  "concentration_time_hour",                 null: false
     t.integer  "concentration_time_minute",               null: false
-    t.text     "content",                   limit: 65535
-    t.text     "image",                     limit: 65535
-    t.integer  "user_id"
+    t.float    "total_time",                limit: 24
+    t.float    "concentration_time",        limit: 24
+    t.float    "concentration_rate",        limit: 24
+    t.integer  "user_id_id"
+    t.integer  "tag_id_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.index ["tag_id_id"], name: "index_reports_on_tag_id_id", using: :btree
+    t.index ["user_id_id"], name: "index_reports_on_user_id_id", using: :btree
+  end
+
+  create_table "reports_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "report_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_reports_tags_on_report_id", using: :btree
+    t.index ["tag_id"], name: "index_reports_tags_on_tag_id", using: :btree
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "tagname",       null: false
-    t.integer  "parent_tag_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["parent_tag_id"], name: "index_tags_on_parent_tag_id", using: :btree
-    t.index ["tagname"], name: "index_tags_on_tagname", unique: true, using: :btree
+    t.string   "name"
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "username",                            null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "username",                                          null: false
+    t.string   "email",                                default: "", null: false
+    t.string   "encrypted_password",                   default: "", null: false
+    t.text     "avatar",                 limit: 65535
+    t.integer  "level",                                             null: false
+    t.integer  "exp",                                               null: false
+    t.integer  "coin",                                              null: false
+    t.text     "profile",                limit: 65535
+    t.string   "birthday"
+    t.string   "sex"
+    t.integer  "background"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["level"], name: "index_users_on_level", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  add_foreign_key "report_tags", "reports"
-  add_foreign_key "report_tags", "tags"
+  create_table "users_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_users_tags_on_tag_id", using: :btree
+    t.index ["user_id"], name: "index_users_tags_on_user_id", using: :btree
+  end
+
+  add_foreign_key "reports_tags", "reports"
+  add_foreign_key "reports_tags", "tags"
+  add_foreign_key "users_tags", "tags"
+  add_foreign_key "users_tags", "users"
 end

@@ -15,7 +15,7 @@
           %span<>
           = current_user.username
         .user-pulldown-list
-          = link_to "マイページ", user_path(current_user), class: "user-links"
+          = link_to "マイページ", user_path(current_user.id), class: "user-links"
           = link_to "お知らせ", root_path, class: "user-links"
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-links"
           = link_to "パスワードの変更", edit_user_registration_path, class: "user-links"
