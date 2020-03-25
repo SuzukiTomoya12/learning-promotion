@@ -2,9 +2,10 @@ class CreateTags < ActiveRecord::Migration[5.0]
   def change
     create_table :tags do |t|
 
-      t.string :tagname, null: false
-      t.index :tagname, unique: true
-      t.references :parent_tag, null: false
+      t.string :name
+      t.index :name
+      t.string :ancestry
+      
       t.timestamps
     end
   end

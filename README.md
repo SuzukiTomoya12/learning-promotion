@@ -30,12 +30,15 @@ Things you may want to cover:
 |username|string|null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
-|birthday|string||
 |avatar|text||
+|level|integer|null: false|
+|experience|integer|null: false|
+|coin|integer|null: false|
 |profile|text||
+|birthday|string||
 |sex|string||
-|level|integer||
-|experience|integer||
+|bachground|integer||
+
 ### Asociation
 - has_many :reports
 - has_many :users_tags
@@ -44,14 +47,18 @@ Things you may want to cover:
 ## reportsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|tagname|string|null: false|
+|content|text||
+|image|text||
 |total_time_hour|integer|null: false|
 |total_time_minute|integer|null: false|
 |concentration_time_hour|integer|null: false|
 |concentration_time_minute|integer|null: false|
-|content|text||
-|image|text||
+|total_time|float||
+|concentration_time|float||
+|concentration_rate|float||
 |user|references|null: false, foreign_key: true|
+|tag|references|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :user
 - has_many :reports_tags
@@ -64,16 +71,10 @@ Things you may want to cover:
 |name|string||
 |ancestry|string||
 ### Association
-- has_many :reports
-
-<!-- ## users_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false, foreign_key: true|
-|tag|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :tag
+- has_many :reports_tags
+- has_many  :reports, through: :reports_tags
+- has_many :users_tags
+- has_many  :users, through: :users_tags
 
 ## reports_tagsテーブル
 |Column|Type|Options|
@@ -84,19 +85,12 @@ Things you may want to cover:
 - belongs_to :report
 - belongs_to :tag
 
-## tagsテーブル
+## users_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|tagname|string|null: false|
-|parent-tag|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|tag|references|null: false, foreign_key: true|
 ### Association
-- has_many :users
-- has_many :reports
-- belongs_to :parent-tag
+- belongs_to :user
+- belongs_to :tag
 
-## parent-tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|parent-tagname|string|null: false|
-### Association
-- has_many :tags -->

@@ -12,14 +12,17 @@
             = current_user.username
         .level
           %p Lv.
-          %p 100
+          %p
+            = @user.level
         .experience
           %p.item 経験値
-          %p 123456
+          %p
+            = @user.exp
         .next-level
           %p.item 次のレベルまで
           %p.until あと
-          %p 5620
+          %p
+            = 100 - @user.exp
         
 
     .information__middle
@@ -31,7 +34,8 @@
           から利用しています
       .coin.icon-item
         = icon('fas', 'coins', class: 'icon')
-        %p 1200
+        %p
+          = @user.coin
       .award.icon-item
         = icon('fas', 'award', class: 'icon')
         %p 称号：凄腕エンジニア

@@ -8,6 +8,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      t.text :avatar
+      t.integer :level, null: false
+      t.integer :exp, null: false
+      t.integer :coin, null: false
+      t.text :profile
+      t.string :birthday
+      t.string :sex
+      t.integer :background
+
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -40,6 +50,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
     add_index :users, :username,             unique: true
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
+    add_index :users, :level
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
