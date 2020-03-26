@@ -114,6 +114,21 @@
     p {
       font-size: 20px;
     }
+    &__store-icon {
+      margin-top: 20px;
+      img {
+        width: 180px;
+      }
+    }
+    .store-icon:hover {
+      opacity: 0.5;
+    }
+    .app-store {
+      margin-right: 10px;
+    }
+    .google-play {
+      margin-left: 10px;
+    }
   }
 
   .guide {
@@ -150,16 +165,16 @@
         background-blend-mode: darken;
       }
       &--elementary-school {
-        background-image: url(elementary-school.jpg);
+        background-image: image-url("elementary-school.jpg");
       }
       &--student {
-        background-image: url(student.jpg);
+        background-image: image-url("student.jpg");
       }
       &--college-student {
-        background-image: url(college-student.jpg);
+        background-image: image-url("college-student.jpg");
       }
       &--society {
-        background-image: url(society.jpg);
+        background-image: image-url("society.jpg");
       }
       &--society:hover {
         opacity: 0.7;

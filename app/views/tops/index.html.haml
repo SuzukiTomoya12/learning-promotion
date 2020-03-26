@@ -11,6 +11,11 @@
     %p あなたの学習をもっとワクワクする時間に変えませんか？
     %p Stairsはあなたの日々のがんばりを、目に見えるカタチでレベルアップさせられるサービスです。
     %p ゲームのような感覚で学びの時間を楽しくしよう！
+    .information__store-icon
+      = link_to "https://www.apple.com/jp/ios/app-store/", target: "blank" do
+        = image_tag asset_path('icon/app-store.svg'), width: "100%", height: "100%", class: "store-icon app-store"
+      = link_to "https://play.google.com/store", target: "blank" do
+        = image_tag asset_path('icon/google-play.svg'), height: '100%', width: '100%', class: "store-icon google-play"
   .guide
     %h1 あなたに最適な学習ライフを提案します
     .guide__wrapper
