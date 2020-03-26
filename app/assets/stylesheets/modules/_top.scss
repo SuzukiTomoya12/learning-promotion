@@ -104,12 +104,21 @@
 
   .information {
     height: 600px;
-    color: black;
-    border-bottom: 1px solid rgb(140,140,140);
+    // color: black;
+    // border-bottom: 1px solid rgb(140,140,140);
     padding: 40px;
+
+    background-image: image-url("topimage.jpg");
+    background-size: cover;
+    background-color:rgba(255,255,255,0.3);
+    background-blend-mode:lighten;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
     &__heading {
       font-size: 36px;
-      color: #2b546a;
+      // color: #2b546a;
+
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
     }
     p {
       font-size: 20px;
