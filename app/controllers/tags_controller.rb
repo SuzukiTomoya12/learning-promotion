@@ -13,7 +13,7 @@ class TagsController < ApplicationController
 
   private
   def tag_params
-    params.require(:tag).permit(:tagname, :parent_tag_id)
+    params.require(:tag).permit(:name, :parent_tag_id)
   end
 
 end
