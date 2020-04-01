@@ -37,8 +37,8 @@ Stairs
 Ruby on Rails, haml, sass, JavaScript, jQuery, AWS
 
 ## バージョン
-ruby 2.5.1
-Rails 5.0.7.2
+ruby 2.5.1  
+Rails 5.0.7.2  
 
 ## 本番環境
 [本番環境へのアクセスURL](http://18.176.92.110/)
@@ -58,7 +58,7 @@ $  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
 
 # DB設計
 ## ER図
-![StairsのER図](#)
+![StairsのER図](https://user-images.githubusercontent.com/60733386/78125310-cda91180-744b-11ea-998a-dcbe4dc4ad69.png)
 
 ## usersテーブル
 |Column|Type|Options|
