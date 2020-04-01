@@ -1,5 +1,3 @@
-# require 'db/seeds/tags.rb'
-
 #親カテゴリー
 parent_array = [
   {name: "開発", description: "近頃ブームにもなっている、プログラミングやデータサイエンス分野を扱うカテゴリーです。", image: ""},

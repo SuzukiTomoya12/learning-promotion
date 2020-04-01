@@ -5,5 +5,5 @@ class Tag < ApplicationRecord
   belongs_to :parent_tag
 
   # 存在しないと保存できないバリデーション カリキュラム/2678
-  validates :tagname, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end

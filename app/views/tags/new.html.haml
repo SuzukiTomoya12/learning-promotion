@@ -4,7 +4,7 @@
 .wrapper
   = form_for(@tag) do |f|
     .field
-      = f.text_field :tagname, autofocus: true, class: "input-area"
+      = f.text_field :name, autofocus: true, class: "input-area"
       .field
       = f.text_field :parent_tag_id, autofocus: true, placeholder: "parenttag", class: "input-area"
     .actions
