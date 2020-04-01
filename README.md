@@ -1,34 +1,61 @@
 # README
+## Title
+Stairs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This application helps daily learning.
+For example, homework for children attending school, social study for job hunting, skill up learning for business person.
+People are in an environment where they have to keep learning everyday.
+But keeping motivation is not easy. So this app will help you.
+After learning, make a report with this app to gain experience, you can level up.
+It's experience of level up keeps your motivation and would connect the next learning.
 
-Things you may want to cover:
+このアプリは、日々の学習を手助けするためのアプリです。  
+学校に通う子どもたちの宿題、就職活動のための社会勉強、社会人のスキルアップのための学習。全ての人が日々、学ばなければならない環境にあります。  
+しかし、そのモチベーションを保つことは容易ではありません。  
+そこで、このアプリが手助けをします。  
+1日1回、学習後にこのアプリでレポートを作ると経験値を獲得し、レベルアップすることができます。  
+このレベルアップの体験がユーザーのモチベーションを保ち、翌日の学習に繋がるはずです。
 
-* Ruby version
+## Production background
+### 制作背景
+塾講師としてアルバイトをしていた時、ゲームをするのが好きで、勉強の方は楽しくないからしたくないと言う生徒が多くいました。その時私も共感する部分があったので、だったらゲームのような感覚を味わえれば進んで勉強したくなるのではないかと考え、1つの答えとしてアプリで勉強を手助けできるツールを開発しようと決めました。
 
-* System dependencies
+## Technology used
+### 使用技術
+Ruby on Rails, haml, sass, JavaScript, jQuery, AWS
 
-* Configuration
+## Production environment
+[本番環境へのアクセスURL](http://18.176.92.110/)
 
-* Database creation
+## Installation
+Please paste the following commands at a terminal prompt.
 
-* Database initialization
+```
+$  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
+```
+## Usage
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Ruby version
+ruby 2.5.1
+Rails 5.0.7.2
 
-* ...
 
-# learning-promotionのDB設計
+## Author
+#### Suzuki Tomoya 鈴木智也
+
+
+# DB設計
+## ER図
+![StairsのER図](#)
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |username|string|null: false, unique: true|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 |avatar|text||
 |level|integer|null: false|
