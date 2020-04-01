@@ -1,17 +1,29 @@
+<style>
+  .english {font-size:16px;}
+  .japanese {color:gray;}
+  .japanese {font-size:10px;}
+</style>
+
 # Title
-**Stairs**  
-<!-- Learning promotion app -->
+<span style="font-size:30px;">Stairs</span>  
 学習促進アプリ
+<!-- Learning promotion app -->
 
 # Description
-<!-- This application helps daily learning.
+<span class="english">
+This application helps daily learning.
 For example, homework for children attending school, social study for job hunting, skill up learning for business person.
 People are in an environment where they have to keep learning everyday.
 But keeping motivation is not easy. So this app will help you.
 After learning, make a report with this app to gain experience, you can level up.
-It's experience of level up keeps your motivation and would connect the next learning.-->
+It's experience of level up keeps your motivation and would connect the next learning.
+</span>
+<br/>
 
+<span class="japanese" color="red">
 このアプリは、日々の学習を手助けするためのアプリです。学校に通う子どもたちの宿題、就職活動のための社会勉強、社会人のスキルアップのための学習。全ての人が日々、学ばなければならない環境にあります。しかし、そのモチベーションを保つことは容易ではありません。そこで、このアプリが手助けをします。1日1回、学習後にこのアプリでレポートを作ると経験値を獲得し、レベルアップすることができます。このレベルアップの体験がユーザーのモチベーションを保ち、翌日の学習に繋がるはずです。
+</span>
+
 
 ## Production background
 ### 制作背景
