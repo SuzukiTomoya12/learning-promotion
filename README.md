@@ -1,6 +1,5 @@
-# README
-## Title
-Stairs
+# Title
+### Stairs
 
 ## Description
 This application helps daily learning.
