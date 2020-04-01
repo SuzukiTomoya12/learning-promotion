@@ -58,7 +58,7 @@ $  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
 
 # DB設計
 ## ER図
-![StairsのER図](https://user-images.githubusercontent.com/60733386/78125310-cda91180-744b-11ea-998a-dcbe4dc4ad69.png)
+![StairsのER図](https://user-images.githubusercontent.com/60733386/78125927-adc61d80-744c-11ea-8ebd-65bd1cdf566b.png)
 
 ## usersテーブル
 |Column|Type|Options|
