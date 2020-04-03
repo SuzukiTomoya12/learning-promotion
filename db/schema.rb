@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 20200324081904) do
     t.float    "total_time",                limit: 24
     t.float    "concentration_time",        limit: 24
     t.float    "concentration_rate",        limit: 24
-    t.integer  "user_id_id"
-    t.integer  "tag_id_id"
+    t.integer  "user_id"
+    t.integer  "tag_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
-    t.index ["tag_id_id"], name: "index_reports_on_tag_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_reports_on_user_id_id", using: :btree
+    t.index ["tag_id"], name: "index_reports_on_tag_id", using: :btree
+    t.index ["user_id"], name: "index_reports_on_user_id", using: :btree
   end
 
   create_table "reports_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

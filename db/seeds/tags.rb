@@ -57,21 +57,21 @@ end
 
 
 business_skill_child_array = [
-  {name: "Microsoft", description: "Microsoft社のoffice製品を主としたカテゴリー", image: ""},
-  {name: "マネジメント", description: "組織の運営・管理・統制など", image: ""}
+  {name: "Microsoft", description: "Microsoft社のoffice製品を主としたカテゴリー", image: "tags/business-skill/"},
+  {name: "マネジメント", description: "組織の運営・管理・統制など", image: "tags/business-skill/"}
 ]
 
 business_skill_grandchild_array = [
   [ # ビジネススキル >> Microsoft
-  {name: "Excel", description: "簡単な表作成から財務管理、マクロなど利用者に幅広く愛されるビジネスツールです", image: ""},
-  {name: "Word", description: "文書の作成に適したツール", image: ""},
-  {name: "Power Point", description: "プレゼンテーションの作成が可能なツール", image: ""}
+  {name: "Excel", description: "簡単な表作成から財務管理、マクロなど利用者に幅広く愛されるビジネスツールです", image: "tags/business-skill/Excel.jpg"},
+  {name: "Word", description: "文書の作成に適したツール", image: "tags/business-skill/Word.png"},
+  {name: "Power Point", description: "プレゼンテーションの作成が可能なツール", image: "tags/business-skill/PowerPoint.jpg"}
   ],[ # ビジネススキル >> マネジメント
-  {name: "スクラム", description: "「上下関係」ではなく「チーム」を重視したマネジメントスタイル", image: ""},
-  {name: "品質管理", description: "顧客に提供する商品やサービスの品質を向上するためのメソッド", image: ""},
-  {name: "アジャイル", description: "スプリントを重ねて短い周期で改良していく開発スタイル", image: ""},
-  {name: "リスク管理", description: "ビジネスに欠かせない、リスクヘッジや分散に関する知識", image: ""},
-  {name: "リーダーシップ", description: "組織を率いるポジションの人材に求められるスキル", image: ""}
+  {name: "スクラム", description: "「上下関係」ではなく「チーム」を重視したマネジメントスタイル", image: "tags/business-skill/scrum.jpg"},
+  {name: "品質管理", description: "顧客に提供する商品やサービスの品質を向上するためのメソッド", image: "tags/business-skill/quality-management.jpg"},
+  {name: "アジャイル", description: "スプリントを重ねて短い周期で改良していく開発スタイル", image: "tags/business-skill/agile.jpg"},
+  {name: "リスク管理", description: "ビジネスに欠かせない、リスクヘッジや分散に関する知識", image: "tags/business-skill/risk-management.jpg"},
+  {name: "リーダーシップ", description: "組織を率いるポジションの人材に求められるスキル", image: "tags/business-skill/leadership.jpg"}
   ]
 ]
 
@@ -102,46 +102,46 @@ end
 # ]
 
 parent = Tag.create(parent_array[2])
-design_child_array.each_with_index do |child,i|
-  child = parent.children.create(name: child[:name], description: child[:description], image: child[:image])
-  design_grandchild_array[i].each do |grandchild|
-    child.children.create(name: grandchild[:name], description: grandchild[:description], image: grandchild[:image])
-  end
-end
+# design_child_array.each_with_index do |child,i|
+#   child = parent.children.create(name: child[:name], description: child[:description], image: child[:image])
+#   design_grandchild_array[i].each do |grandchild|
+#     child.children.create(name: grandchild[:name], description: grandchild[:description], image: grandchild[:image])
+#   end
+# end
 
 
 # 教育・教養
 education_child_array = [
-  {name: "言語", description: "", image: ""},
-  {name: "資格", description: "", image: ""},
-  {name: "エンジニアリング", description: "", image: ""}
+  {name: "言語", description: "", image: "tags/education/language.png"},
+  {name: "資格", description: "", image: "tags/education/"},
+  {name: "エンジニアリング", description: "", image: "tags/education/"}
 ]
 
 education_grandchild_array = [
   [ # 教育・教養 >> 言語
-  {name: "英語", description: "世界で最も主要な言語", image: ""},
-  {name: "日本語", description: "日本人の母国語言語", image: ""},
-  {name: "中国語", description: "中国の発展と共に修学価値が高まる言語", image: ""},
-  {name: "イタリア語", description: "", image: ""},
-  {name: "フランス語", description: "", image: ""},
-  {name: "ドイツ語", description: "", image: ""},
-  {name: "スペイン語", description: "", image: ""},
-  {name: "その他の言語", description: "主要な言語以外のその他のもの", image: ""}
+  {name: "英語", description: "世界で最も主要な言語", image: "tags/education/English.png"},
+  {name: "日本語", description: "日本人の母国語言語", image: "tags/education/Japanese.png"},
+  {name: "中国語", description: "中国の発展と共に修学価値が高まる言語", image: "tags/education/Chinese.png"},
+  {name: "イタリア語", description: "", image: "tags/education/Italian.png"},
+  {name: "フランス語", description: "", image: "tags/education/French.png"},
+  {name: "ドイツ語", description: "", image: "tags/education/Germany.png"},
+  {name: "スペイン語", description: "", image: "tags/education/Spanish.png"},
+  {name: "その他の言語", description: "主要な言語以外のその他のもの", image: "tags/education/foreign-language.png"}
   ],[ # 教育・教養 >> 資格・検定
-  {name: "簿記", description: "", image: ""},
-  {name: "宅地建物取引士", description: "", image: ""},
-  {name: "建築士", description: "", image: ""},
-  {name: "施工管理技士", description: "", image: ""},
-  {name: "色彩検定", description: "", image: ""},
-  {name: "カラーコーディネーター", description: "", image: ""},
-  {name: "インテリアコーディネーター", description: "", image: ""}
+  {name: "簿記", description: "", image: "tags/education/"},
+  {name: "宅地建物取引士", description: "", image: "tags/education/"},
+  {name: "建築士", description: "", image: "tags/education/"},
+  {name: "施工管理技士", description: "", image: "tags/education/"},
+  {name: "色彩検定", description: "", image: "tags/education/"},
+  {name: "カラーコーディネーター", description: "", image: "tags/education/"},
+  {name: "インテリアコーディネーター", description: "", image: "tags/education/"}
   ],[ # 教育・教養 >> エンジニアリング
-  {name: "機械工学", description: "", image: ""},
-  {name: "ロボット工学", description: "", image: ""},
-  {name: "電気工学", description: "", image: ""},
-  {name: "電子工学", description: "", image: ""},
-  {name: "土木工学", description: "", image: ""},
-  {name: "航空宇宙工学", description: "", image: ""}
+  {name: "機械工学", description: "", image: "tags/education/"},
+  {name: "ロボット工学", description: "", image: "tags/education/"},
+  {name: "電気工学", description: "", image: "tags/education/"},
+  {name: "電子工学", description: "", image: "tags/education/"},
+  {name: "土木工学", description: "", image: "tags/education/"},
+  {name: "航空宇宙工学", description: "", image: "tags/education/"}
   ]
 ]
 

@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
   def create
     # binding.pry
     Report.create(report_params)
-    # redirect_to user_path(current_user)
+    redirect_to user_path(current_user.id)
   end
 
   private
