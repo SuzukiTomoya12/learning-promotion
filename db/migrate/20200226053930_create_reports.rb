@@ -11,8 +11,8 @@ class CreateReports < ActiveRecord::Migration[5.0]
       t.float :total_time
       t.float :concentration_time
       t.float :concentration_rate
-      t.references :user_id
-      t.references :tag_id
+      t.references :user
+      t.references :tag
       t.timestamps
     end
   end
