@@ -12,7 +12,7 @@ parent_array = [
 
 # 開発
 development_child_array = [
-  {name: "プログラミング", description: "アプリケーションやソフトウェア開発に関わるプログラミングを学びます。", image: "tags/development/programing.jpg")},
+  {name: "プログラミング", description: "アプリケーションやソフトウェア開発に関わるプログラミングを学びます。", image: "tags/development/programing.jpg"},
   {name: "開発ツール", description: "開発に便利なツールの使い方を学びます。", image: "tags/development/development-tool.jpg"},
   {name: "データベース", description: "SQLなどを学ぶことができます。", image: "tags/development/database.jpg"},
   {name: "データサイエンス", description: "ビッグデータの活用方法などを学ぶことができます。", image: "tags/development/data-science.jpg"},
@@ -21,28 +21,28 @@ development_child_array = [
 
 development_grandchild_array = [
   [ # 開発 >> プログラミング
-  {name: "HTML/CSS", description: "Web上の見た目を作るマークアップ言語の1つ", image: ""},
-  {name: "Ruby", description: "直感的に理解しやすいサーバーサイド言語", image: ""},
-  {name: "Ruby on Rails", description: "Webサービスの開発に用いるRubyのフレームワーク", image: ""},
-  {name: "Java Script", description: "Webに動きを付与することができるフロントエンド言語", image: ""},
-  {name: "jQuery", description: "様々なアニメーションが実行できるJava Scriptのライブラリ", image: ""},
-  {name: "PHP", description: "Web開発に適した日本でも人気の高いサーバーサイド言語", image: ""},
+  {name: "HTML/CSS", description: "Web上の見た目を作るマークアップ言語の1つ", image: "tags/development/hrml-css.png"},
+  {name: "Ruby", description: "直感的に理解しやすいサーバーサイド言語", image: "tags/development/ruby.png"},
+  {name: "Ruby on Rails", description: "Webサービスの開発に用いるRubyのフレームワーク", image: "tags/development/rails.jpg"},
+  {name: "Java Script", description: "Webに動きを付与することができるフロントエンド言語", image: "tags/development/javascript.png"},
+  {name: "jQuery", description: "様々なアニメーションが実行できるJava Scriptのライブラリ", image: "tags/development/jquery.jpg"},
+  {name: "PHP", description: "Web開発に適した日本でも人気の高いサーバーサイド言語", image: "tags/development/php.png"},
   {name: "Laravel", description: "PHPの開発用フレームワーク", image: "tags/development/Laravel.png"},
-  {name: "Java", description: "大規模な開発にも適している汎用的なプログラミング言語", image: ""},
-  {name: "C", description: "モダンなプログラミング言語", image: ""},
-  {name: "C++", description: "モダンなプログラミング言語", image: ""},
-  {name: "C#", description: "モダンなプログラミング言語", image: ""},
-  {name: "React", description: "サイトの見た目や動きを作る、世界的に人気上昇中のJava Scriptのライブラリ", image: ""},
-  {name: "Swift", description: "iOSのアプリ開発に適したプログラミング言語", image: ""},
-  {name: "Go", description: "Googleによって開発された人気上昇中のプログラミング言語", image: ""}
+  {name: "Java", description: "大規模な開発にも適している汎用的なプログラミング言語", image: "tags/development/java.png"},
+  {name: "C", description: "モダンなプログラミング言語", image: "tags/development/C.png"},
+  {name: "C++", description: "モダンなプログラミング言語", image: "tags/development/C++.png"},
+  {name: "C#", description: "モダンなプログラミング言語", image: "tags/development/C#.png"},
+  {name: "React", description: "サイトの見た目や動きを作る、世界的に人気上昇中のJava Scriptのライブラリ", image: "tags/development/React.png"},
+  {name: "Swift", description: "iOSのアプリ開発に適したプログラミング言語", image: "tags/development/Swift.svg"},
+  {name: "Go", description: "Googleによって開発された人気上昇中のプログラミング言語", image: "tags/development/Go.png"}
   ],[ # 開発 >> 開発ツール
-  {name: "Git", description: "コードの管理やチームでの共同開発を可能にするツール", image: ""}
+  {name: "Git", description: "コードの管理やチームでの共同開発を可能にするツール", image: "tags/development/GitHub.png"}
   ],[ # 開発 >> データベース
-    {name: "MySQL", description: "データの操作や分析に利用できるデータベース言語", image: ""}
+    {name: "MySQL", description: "データの操作や分析に利用できるデータベース言語", image: "tags/development/mysql.png"}
   ],[ # 開発 >> データサイエンス
-  {name: "機械学習", description: "アルゴリズムを用いてデータ分析を行う分野", image: ""}
+  {name: "機械学習", description: "アルゴリズムを用いてデータ分析を行う分野", image: "tags/development/mashine-learning.jpg"}
   ],[ # 開発 >> ゲーム開発
-  {name: "Unity", description: "ゲームの開発に用いられるプログラミング言語", image: ""}
+  {name: "Unity", description: "ゲームの開発に用いられるプログラミング言語", image: "tags/development/unity.jpg"}
   ]
 ]
 
@@ -153,8 +153,12 @@ education_child_array.each_with_index do |child,i|
   end
 end
 
+
+
 # 宿題
 parent = Tag.create(parent_array[4])
+
+
 
 # 読書
 reading_child_array = [
