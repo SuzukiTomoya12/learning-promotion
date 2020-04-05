@@ -11,6 +11,10 @@ class TagsController < ApplicationController
     Tag.create(tag_params)
   end
 
+
+  def register
+  end
+  
   private
   def tag_params
     params.require(:tag).permit(:name, :parent_tag_id)
