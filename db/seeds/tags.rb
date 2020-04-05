@@ -136,12 +136,12 @@ education_grandchild_array = [
   {name: "カラーコーディネーター", description: "", image: "tags/education/"},
   {name: "インテリアコーディネーター", description: "", image: "tags/education/"}
   ],[ # 教育・教養 >> エンジニアリング
-  {name: "機械工学", description: "", image: "tags/education/"},
-  {name: "ロボット工学", description: "", image: "tags/education/"},
+  {name: "機械工学", description: "", image: "tags/education/machine-engineering.jpg"},
+  {name: "ロボット工学", description: "", image: "tags/education/robot-engineering.jpg"},
   {name: "電気工学", description: "", image: "tags/education/"},
   {name: "電子工学", description: "", image: "tags/education/"},
-  {name: "土木工学", description: "", image: "tags/education/"},
-  {name: "航空宇宙工学", description: "", image: "tags/education/"}
+  {name: "土木工学", description: "", image: "tags/education/civil-engineering.jpg"},
+  {name: "航空宇宙工学", description: "", image: "tags/education/aerospace.jpg"}
   ]
 ]
 
