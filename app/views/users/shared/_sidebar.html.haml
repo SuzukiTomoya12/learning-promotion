@@ -24,6 +24,8 @@
       = link_to "学習を始める", root_path, class: "btn"
     .action-area__create-report.btn-container
       = link_to "レポートを作成する", new_report_path, class: "btn"
+    .action-area__register-tag.btn-container
+      = link_to "タグを登録する", regiter_tag_user_path(current_user.id), class: "btn"
     .action-area__exchange-items.btn-container
       = link_to "アイテム交換", root_path, class: "btn"
     .action-area__create-report.btn-container
