@@ -37,13 +37,13 @@
               .hour-area
                 %p.item 時間
                 .field
-                  = f.text_field :total_time_hour, autofocus: true, class: "input-area"
+                  = f.text_field :total_time_hour, autofocus: true, class: "input-area", required: ""
               .break.first-break
                 %p :
               .minute-area
                 %p.item 分
                 .field
-                  = f.text_field :total_time_minute, autofocus: true, class: "input-area"
+                  = f.text_field :total_time_minute, autofocus: true, class: "input-area", required: ""
               .break.second-break
                 %p :
               .break.third-break
@@ -55,13 +55,13 @@
               .hour-area
                 %p.item 時間
                 .field
-                  = f.text_field :concentration_time_hour, autofocus: true, class: "input-area"
+                  = f.text_field :concentration_time_hour, autofocus: true, class: "input-area", required: ""
               .break.first-break
                 %p :
               .minute-area
                 %p.item 分
                 .field
-                  = f.text_field :concentration_time_minute, autofocus: true, class: "input-area"
+                  = f.text_field :concentration_time_minute, autofocus: true, class: "input-area", required: ""
               .break.second-break
                 %p :
               .break.third-break
@@ -74,7 +74,7 @@
             = icon('fas', 'info', class: 'info-icon')
         .output-container__textarea
           .field
-            = f.text_area :content, autofocus: true, class: "input-area"
+            = f.text_area :content, autofocus: true, class: "input-area", required: ""
       .image-container.report-container
         .image-container__heading.icon-item
           = icon('fas', 'images', class: 'icon')
