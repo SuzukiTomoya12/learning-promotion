@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
-
   before_action :authenticate_user!
+  before_action :set_tag, only: [:new]
 
   def index
   end
@@ -24,9 +24,11 @@ class ReportsController < ApplicationController
   private
   def report_params
     params.require(:report).permit( :content, :image, :total_time_hour, :total_time_minute,
-                                    :concentration_time_hour, :concentration_time_minute, :total_time, :concentration_time, :concentration_rate)
+                                    :concentration_time_hour, :concentration_time_minute, :total_time, :concentration_time, :concentration_rate, :tag_id)
                           .merge(user_id: current_user.id)
   end
 
-
+  def set_tag
+    @tags = Tag.all
+  end
 end
