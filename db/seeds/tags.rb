@@ -85,29 +85,49 @@ end
 
 
 # デザイン
-# design_child_array = [
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-# ]
+design_child_array = [
+  {name: "グラフィックデザイン", description: "デジタルでのデザイニングをメインとした分野", image: "tags/design/graphic-design.jpg"},
+  {name: "Webデザイン", description: "Web画面を美しく魅せるデザイン", image: ""},
+  {name: "デザインツール", description: "", image: ""},
+  {name: "3Dアニメーション", description: "", image: ""},
+  {name: "ゲームデザイン", description: "", image: ""},
+  {name: "ファッション", description: "", image: ""},
+  {name: "建築・インテリアデザイン", description: "", image: ""},
+]
 
-# design_grandchild_array = [
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-#   {name: "", description: "", image: ""},
-# ]
+design_grandchild_array = [
+  [ # デザイン >> グラフィックデザイン
+  {name: "キャラクターデザイン", description: "", image: ""},
+  {name: "ロゴデザイン", description: "", image: ""}
+  ],[ # デザイン >> Webデザイン
+  {name: "UI(ユーザーインターフェース)", description: "ユーザーの操作性を考えた視覚的なディスプレイ設計", image: ""},
+  {name: "UX(ユーザーエクスペリエンス)", description: "", image: ""}
+  ],[ # デザイン >> デザインツール
+  {name: "Adobe Illustrator", description: "", image: ""},
+  {name: "Adobe Photoshop", description: "", image: ""}
+  ],[ # デザイン >> 3Dアニメーション
+  {name: "Blender", description: "", image: ""}
+  ],[ # デザイン >> ゲームデザイン
+  {name: "ピクセルアート", description: "昔ながらのゲーム特有の愛されるドット調のゲームデザイン", image: "tags/design/pixel-art.png"},
+  {name: "VFX", description: "ゲームならではの視覚効果を施す技術", image: ""}
+  ],[ # デザイン >> ファッション
+  {name: "ファッションデザイン", description: "", image: ""},
+  {name: "裁縫技術", description: "", image: ""}
+  ],[ # デザイン >> 建築・インテリアデザイン
+  {name: "SckechUp", description: "初心者からプロまで広く扱われる3Dデザインツール", image: ""},
+  {name: "照明デザイン", description: "", image: ""},
+  {name: "色彩理論", description: "", image: ""},
+  {name: "3D CAD", description: "3D表現が可能なCADソフトの建築デザイン", image: ""}
+  ]
+]
 
 parent = Tag.create(parent_array[2])
-# design_child_array.each_with_index do |child,i|
-#   child = parent.children.create(name: child[:name], description: child[:description], image: child[:image])
-#   design_grandchild_array[i].each do |grandchild|
-#     child.children.create(name: grandchild[:name], description: grandchild[:description], image: grandchild[:image])
-#   end
-# end
+design_child_array.each_with_index do |child,i|
+  child = parent.children.create(name: child[:name], description: child[:description], image: child[:image])
+  design_grandchild_array[i].each do |grandchild|
+    child.children.create(name: grandchild[:name], description: grandchild[:description], image: grandchild[:image])
+  end
+end
 
 
 # 教育・教養

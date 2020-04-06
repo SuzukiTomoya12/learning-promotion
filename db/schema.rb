@@ -12,6 +12,24 @@
 
 ActiveRecord::Schema.define(version: 20200324081904) do
 
+  create_table "possession", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "report_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_possession_on_report_id", using: :btree
+    t.index ["tag_id"], name: "index_possession_on_tag_id", using: :btree
+  end
+
+  create_table "registration", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_registration_on_tag_id", using: :btree
+    t.index ["user_id"], name: "index_registration_on_user_id", using: :btree
+  end
+
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",                   limit: 65535
     t.text     "image",                     limit: 65535
@@ -28,15 +46,6 @@ ActiveRecord::Schema.define(version: 20200324081904) do
     t.datetime "updated_at",                              null: false
     t.index ["tag_id"], name: "index_reports_on_tag_id", using: :btree
     t.index ["user_id"], name: "index_reports_on_user_id", using: :btree
-  end
-
-  create_table "reports_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "report_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["report_id"], name: "index_reports_tags_on_report_id", using: :btree
-    t.index ["tag_id"], name: "index_reports_tags_on_tag_id", using: :btree
   end
 
   create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -72,17 +81,8 @@ ActiveRecord::Schema.define(version: 20200324081904) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  create_table "users_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_users_tags_on_tag_id", using: :btree
-    t.index ["user_id"], name: "index_users_tags_on_user_id", using: :btree
-  end
-
-  add_foreign_key "reports_tags", "reports"
-  add_foreign_key "reports_tags", "tags"
-  add_foreign_key "users_tags", "tags"
-  add_foreign_key "users_tags", "users"
+  add_foreign_key "possession", "reports"
+  add_foreign_key "possession", "tags"
+  add_foreign_key "registration", "tags"
+  add_foreign_key "registration", "users"
 end

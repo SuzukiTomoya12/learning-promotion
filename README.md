@@ -112,7 +112,7 @@ $  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
 - has_many :users_tags
 - has_many  :users, through: :users_tags
 
-## reports_tagsテーブル
+## possessionテーブル
 |Column|Type|Options|
 |------|----|-------|
 |report|references|null: false, foreign_key: true|
@@ -121,7 +121,7 @@ $  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
 - belongs_to :report
 - belongs_to :tag
 
-## users_tagsテーブル
+## registrationテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
