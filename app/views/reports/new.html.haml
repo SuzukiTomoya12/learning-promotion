@@ -7,14 +7,15 @@
       %h2 レポート作成
 
     = form_for @report do |f|
-      -# .tag-container.report-container
-      -#   .tag-container__heading.icon-item
-      -#     = icon('fas', 'tags', class: 'icon')
-      -#     %p.heading タグ
-      -#     .info
-      -#       = icon('fas', 'info', class: 'info-icon')
-        -# .tag-container__main
-          -# .field
+      .tag-container.report-container
+        .tag-container__heading.icon-item
+          = icon('fas', 'tags', class: 'icon')
+          %p.heading タグ
+          .info
+            = icon('fas', 'info', class: 'info-icon')
+        .tag-container__main
+          .field
+            = f.collection_select :tag_id, @tags, :id, :name, {prompt: "選択してください"}, class: "tags-select", required: ""
             -# = f.text_field :name, autofocus: true, class: "input-area"
         -# インクリメンタルサーチでタグを選択できるようにする
         -# .tag-container__tag-search
@@ -22,6 +23,8 @@
         -#   = icon('fas', 'search', class: 'icon')
         -# %ul
           -# %li jQueryで選択されたタグをlistで追加していく
+
+
 
       .learning-time-container.report-container
         .learning-time-container__heading.icon-item
