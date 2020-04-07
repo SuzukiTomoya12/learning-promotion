@@ -30,8 +30,9 @@ Stairs
 3. レポート作成画面にて記入欄を埋め、「作成」ボタンを押します。
 <img width="320" alt="レポート作成画面" src="https://user-images.githubusercontent.com/60733386/78124695-01376c00-744b-11ea-879d-5329c9366009.png">
 
-4. レポート作成の完了です。
+4. レポート作成の完了し、経験値とコインを獲得できます。また量に応じてレベルアップすることがあります。
 
+5. 学習を定期的に続け、どんどんレベルアップしていきましょう！
 
 ## 使用技術
 Ruby on Rails, haml, sass, JavaScript, jQuery, AWS
@@ -129,17 +130,3 @@ $  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
 ### Association
 - belongs_to :user
 - belongs_to :tag
-
-<!-- # Description
-This application helps daily learning.
-For example, homework for children attending school, social study for job hunting, skill up learning for business person.
-People are in an environment where they have to keep learning everyday.
-But keeping motivation is not easy. So this app will help you.
-After learning, make a report with this app to gain experience, you can level up.
-It's experience of level up keeps your motivation and would connect the next learning.  
-
-Please paste the following commands at a terminal prompt.
-
-```
-$  git clone https://github.com/SuzukiTomoya12/learning-promotion.git
-``` -->
