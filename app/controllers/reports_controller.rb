@@ -1,6 +1,7 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_tag, only: [:new]
+  before_action :set_user, only: [:create]
 
   def index
   end
@@ -18,6 +19,8 @@ class ReportsController < ApplicationController
     @report[:concentration_time] = concentration_time.round(2)
     @report[:concentration_rate] = (concentration_time / total_time.to_f).round(3)
     @report.save
+    get_exp
+    get_coin
     redirect_to user_path(current_user.id)
   end
 
@@ -30,5 +33,19 @@ class ReportsController < ApplicationController
 
   def set_tag
     @tags = Tag.all
+  end
+
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+  def get_exp
+    exp = @user.exp + 150
+    @user.update(exp: exp)
+  end
+
+  def get_coin
+    coin = @user.coin + 120
+    @user.update(coin: coin)
   end
 end
