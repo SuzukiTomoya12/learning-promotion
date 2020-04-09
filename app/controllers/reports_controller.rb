@@ -13,11 +13,11 @@ class ReportsController < ApplicationController
   def create
     @report = Report.create(report_params)
     # 合計時間、集中時間、集中の割合を計算
-    total_time = @report.total_time_hour + (@report.total_time_minute.to_f / 60)
-    @report[:total_time] = total_time.round(2)
-    concentration_time = @report.concentration_time_hour + (@report.concentration_time_minute.to_f / 60)
-    @report[:concentration_time] = concentration_time.round(2)
-    @report[:concentration_rate] = (concentration_time / total_time.to_f).round(3)
+    @total_time = @report.total_time_hour + (@report.total_time_minute.to_f / 60)
+    @report[:total_time] = @total_time.round(2)
+    @concentration_time = @report.concentration_time_hour + (@report.concentration_time_minute.to_f / 60)
+    @report[:concentration_time] = @concentration_time.round(2)
+    @report[:concentration_rate] = (@concentration_time / @total_time.to_f).round(3)
     @report.save
     get_exp
     get_coin
@@ -40,12 +40,12 @@ class ReportsController < ApplicationController
   end
 
   def get_exp
-    exp = @user.exp + 150
+    exp = @user.exp + 120 * @total_time
     @user.update(exp: exp)
   end
 
   def get_coin
-    coin = @user.coin + 120
+    coin = @user.coin + 100 * @report.concentration_rate
     @user.update(coin: coin)
   end
 end
