@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user[:coin] = 0
     @user.save
     sign_in(:user, @user)
-    # redirect_to root_path
+    redirect_to root_path
   end
   
 
