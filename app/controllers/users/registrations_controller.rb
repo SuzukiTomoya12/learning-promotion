@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user[:coin] = 0
     @user.save
     sign_in(:user, @user)
-    redirect_to root_path
+    # redirect_to root_path
   end
   
 
@@ -48,7 +48,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+  def initial_value
+    @user[:level] = 1
+    @user[:exp] = 0
+    @user[:coin] = 0
+  end
 
 
   # If you have extra params to permit, append them to the sanitizer.
