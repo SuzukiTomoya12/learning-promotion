@@ -96,6 +96,14 @@
         padding: 0px 24px;
         display: flex;
         justify-content: flex-start;
+
+          // スピンボタンの非表示
+          input[type="number"]::-webkit-outer-spin-button,
+          input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
         &--all-time {
           width: 250px;
         }

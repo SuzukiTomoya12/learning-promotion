@@ -40,13 +40,13 @@
               .hour-area
                 %p.item 時間
                 .field
-                  = f.text_field :total_time_hour, autofocus: true, class: "input-area", required: ""
+                  = f.text_field :total_time_hour, autofocus: true, class: "input-area", required: "", type:"number", max:"12", min: "0"
               .break.first-break
                 %p :
               .minute-area
                 %p.item 分
                 .field
-                  = f.text_field :total_time_minute, autofocus: true, class: "input-area", required: ""
+                  = f.text_field :total_time_minute, autofocus: true, class: "input-area", required: "", type:"number", max:"59", min: "0"
               .break.second-break
                 %p :
               .break.third-break
@@ -58,13 +58,13 @@
               .hour-area
                 %p.item 時間
                 .field
-                  = f.text_field :concentration_time_hour, autofocus: true, class: "input-area", required: ""
+                  = f.text_field :concentration_time_hour, autofocus: true, class: "input-area", required: "", type:"number", max:"12", min: "0"
               .break.first-break
                 %p :
               .minute-area
                 %p.item 分
                 .field
-                  = f.text_field :concentration_time_minute, autofocus: true, class: "input-area", required: ""
+                  = f.text_field :concentration_time_minute, autofocus: true, class: "input-area", required: "", type:"number", max:"59", min: "0"
               .break.second-break
                 %p :
               .break.third-break

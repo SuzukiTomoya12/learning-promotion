@@ -15,9 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash.now[:alert] = @user.errors.full_messages
       render "devise/registrations/new" and return
     end
-    @user[:level] = 1
-    @user[:exp] = 0
-    @user[:coin] = 0
+    initial_value
     @user.save
     sign_in(:user, @user)
     redirect_to root_path
@@ -49,10 +47,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
+  
   def initial_value
     @user[:level] = 1
     @user[:exp] = 0
     @user[:coin] = 0
+    @user[:profile] = "よろしくお願いします。"
   end
 
 
