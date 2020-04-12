@@ -41,6 +41,10 @@ Ruby on Rails, haml, sass, JavaScript, jQuery, AWS
 ruby 2.5.1  
 Rails 5.0.7.2  
 
+## アプリ更新履歴
+- 2020/04/01 アプリ完成（仮）
+- 2020/04/12 レベルアップ機能実装
+
 ## 本番環境
 [本番環境へのアクセスURL](http://18.176.92.110/)
 

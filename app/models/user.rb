@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :reports
   has_many :users_tags
   has_many :tags, through: :users_tags
+  has_one  :experience_point
 
 end
