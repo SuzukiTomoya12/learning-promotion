@@ -148,6 +148,7 @@ education_grandchild_array = [
   {name: "スペイン語", description: "", image: "tags/education/Spanish.png"},
   {name: "その他の言語", description: "主要な言語以外のその他のもの", image: "tags/education/foreign-language.png"}
   ],[ # 教育・教養 >> 資格・検定
+  {name: "運転免許", description: "誰もが通る運転免許取得のための学習", image: "tags/education/"},
   {name: "簿記", description: "", image: "tags/education/"},
   {name: "宅地建物取引士", description: "", image: "tags/education/"},
   {name: "建築士", description: "", image: "tags/education/"},
