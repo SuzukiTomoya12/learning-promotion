@@ -8,9 +8,15 @@ def register_data(experience_point_table)
   # Lv.1〜20
   (1..20).each do |i|
     record = {}
-    until_next = (@standard_value * (0.15 - (i.to_f/400)).to_f * i).ceil
-    record[:until_next_level] = until_next
-    record[:total_required_experience] = experience_point_table[:total_required_experience][i-1] + until_next
+    until_next_level = (@standard_value * (0.15 - (i.to_f/400)).to_f * i).ceil
+    record[:until_next_level] = until_next_level
+
+    total_required_experience = 0
+    (0..(i-1)).each do |i|
+      result = (@standard_value * (0.15 - (i.to_f/400)).to_f * i).ceil
+      total_required_experience += result
+    end
+    record[:total_required_experience] = total_required_experience
     experience_point_table << record
   end
 
