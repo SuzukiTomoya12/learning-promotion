@@ -35,7 +35,7 @@ def second_total_calc(i)
 end
 
 def third_exp_calc(i)
-  @result = ().ceil
+  @result = (537 + (@standard_value * (0.16 - ((i-100).to_f/320).round(8)).round(6)).to_f * ((i-50)* 0.5).to_f).ceil
 end
 
 def third_total_calc(i)
@@ -43,7 +43,7 @@ def third_total_calc(i)
   @total += @second_total
   @third_total = 0
   (50..(i-1)).each do |i|
-    second_exp_calc(i)
+    third_exp_calc(i)
     @total += @result
     if i == (50-1)
       @third_total = @total
@@ -72,7 +72,6 @@ def register_data(experience_point_table)
     record[:total_required_experience] = @total
     experience_point_table << record
   end
-  puts "--ここからlv51~100--"
 
   # Lv.51〜100
   (51..100).each do |i|
