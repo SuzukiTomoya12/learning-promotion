@@ -45,8 +45,25 @@ def third_total_calc(i)
   (50..(i-1)).each do |i|
     third_exp_calc(i)
     @total += @result
-    if i == (50-1)
+    if i == (100-1)
       @third_total = @total
+    end
+  end
+end
+
+def fourth_exp_calc(i)
+  @result = (1014 + ((i-90) ** 2).to_f/40).ceil
+end
+
+def fourth_total_calc(i)
+  @total = 0
+  @total += @third_total
+  @fourth_total = 0
+  (100..(i-1)).each do |i|
+    fourth_exp_calc(i)
+    @total += @result
+    if i == (500-1)
+      @fourth_total = @total
     end
   end
 end
@@ -82,6 +99,16 @@ def register_data(experience_point_table)
     record[:total_required_experience] = @total
     experience_point_table << record
   end
+
+  # Lv.101〜500
+  (101..500).each do |i|
+    record = {}
+    fourth_exp_calc(i)
+    record[:until_next_level] = @result
+    fourth_total_calc(i)
+    record[:total_required_experience] = @total
+    experience_point_table << record
+  end
 end
 
 register_data(experience_point_table)
@@ -93,3 +120,5 @@ register_data(experience_point_table)
 
 #コマンド実行前確認用
 puts experience_point_table
+puts @third_total
+puts @fourth_total
