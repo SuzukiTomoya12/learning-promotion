@@ -1,4 +1,4 @@
-class CreateReportsTags < ActiveRecord::Migration[5.0]
+class CreatePossession < ActiveRecord::Migration[5.0]
   def change
     create_table :possession do |t|
 

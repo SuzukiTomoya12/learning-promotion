@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20200412063212) do
   end
 
   create_table "registration", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "level"
+    t.integer  "exp"
     t.integer  "user_id"
     t.integer  "tag_id"
     t.datetime "created_at", null: false
