@@ -62,11 +62,13 @@ def fourth_total_calc(i)
   (100..(i-1)).each do |i|
     fourth_exp_calc(i)
     @total += @result
-    if i == (500-1)
+    if i == (1000-1)
       @fourth_total = @total
     end
   end
 end
+
+
 
 experience_point_table = []
 def register_data(experience_point_table)
@@ -100,8 +102,8 @@ def register_data(experience_point_table)
     experience_point_table << record
   end
 
-  # Lv.101〜500
-  (101..500).each do |i|
+  # Lv.101〜1000
+  (101..1000).each do |i|
     record = {}
     fourth_exp_calc(i)
     record[:until_next_level] = @result
@@ -112,13 +114,11 @@ def register_data(experience_point_table)
 end
 
 register_data(experience_point_table)
-# ExperiencePoint.create!(experience_point_table)
+ExperiencePoint.create!(experience_point_table)
 # 読み込みの空振りを防ぐために、create!メソッドを使っている↑
 
 # 設定後、下記コマンドを実行
 # bundle exec rake db:seed:experience_point
 
 #コマンド実行前確認用
-puts experience_point_table
-puts @third_total
-puts @fourth_total
+# puts experience_point_table
