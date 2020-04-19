@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   end
 
 
-
   resources :users, only: [:show] do
     member do
       get :regiter_tag, to: 'tags#register'
+      get :learning, to: 'users#learning'
     end
   end
-  resources :reports, only: [:index, :new, :create]
+  resources :reports, only: [:index, :new, :create, :show]
   resources :tags, only: [:index, :new, :create]
 
 

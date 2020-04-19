@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     def show
     end
 
+    def learning
+    end
 
   private
   def set_user

@@ -1,12 +1,35 @@
+.users-header {
+  @include width-height(100%,64px);
+  @include flex-between(center);
+  border-bottom: 1px solid $border-gray;
+  &__left {
+    height: 100%;
+    .logo {
+      @include width-height(64px,64px);
+    }
+  }
+  &__right {
+    .btn {
+      @include padding-margin(14px,0 16px 0 0);
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: $header-btn-color;
+      border-radius: 8px;
+      &:hover {
+        background-color: rgb(121, 174, 255);
+      }
+    }
+  }
+}
 
 .user-page {
-  height: 1000px;
+  height: 700px;
   width: 90%;
   display: flex;
-  justify-content: center;
-  margin: 50px auto;
   &__main {
     width: 60%;
+    margin: 50px auto;
     .information {
       height: 500px;
       background-color: rgb(245, 250, 255);
@@ -155,91 +178,144 @@
 
 
 
-  &__sidebar {
-    width: 396px;
-    padding: 12px 48px;
-    // background-color: rgb(230,230,200);
 
-    .progress-calendar {
-      background-color: white;
-      margin-bottom: 20px;
-      &__heading {
-        height: 40px;
-        font-size: 18px;
-        color: #2b546a;
-        text-align: center;
-      }
-      &__day-heading {
-        width: 245px;
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 55px;
-      }
-      p {
-        width: 30px;
-        color: rgba(43,84,106,0.6);
-        font-size: 14px;
-        text-align: center;
-        margin-left: 5px;
-      }
-      &__date {
-        display: flex;
-        justify-content: space-between;
-        &--month {
-          height: 175px;
-          width: 55px;
-          // background-color: rgba(255, 239, 146, 0.9);
-          line-height: 175px;
-          padding-left: 8px;
-        }
-        &--day {
-          display: flex;
-          justify-content: flex-end;
-          .row {
-            height: 30px;
-            width: 30px;
-            background-color: rgb(237,242,250);
-            margin-left: 5px;
-            margin-bottom: 5px;
-          }
-          .row:hover {
-            background-color: #b0f5e5;
-          }
-        }
-      }
-    }
-    .action-area {
-      height: 300px;
-      a {
-        display: block;
-        width: 240px;
-      }
-      .btn-container {
+
+
+
+  &__sidebar {
+    @include width-height(240px,700px);
+    background-color: rgb(250,250,250);
+    .user-page__sidebar--navigation {
+
+
+      // ------sidebar内、全てに共通のCSS---------
+      .nav-list {
         height: 50px;
-        margin: 10px 0px 0px 60px;
-        text-align: center;
+        background-color: white;
+        border: 1px solid $border-gray;
+        border-top: none;
+        padding-left: 24px;
+        &:hover {
+          background-color: $link-after-hover;
+        }
       }
-      .btn {
-        background-color: rgb(236, 108, 108);
-        color: white;
-        font-size: 14px;
-        cursor: pointer;
-        border-style: none;
-        border-radius: 5px;
-        box-shadow: 0px 5px rgb(202, 72, 72) ;
-        padding: 10px 0px;
-      }
-      .btn:hover {
-        opacity: 0.9;
-      }
-      .btn:active {
-        box-shadow: none;
-        position: relative;
-        top: 5px;
-      }
-      .btn:focus {
-        outline: none;
+      // .first-list {
+      //   border: 1px solid $border-gray;
+      // }
+      .user-navigation {
+        text-decoration: none;
+        font-size: 15px;
+        @include flex-start();
+        .nav-icon,.nav-destination {
+          line-height: 50px;
+          color: rgb(100,100,100);
+        }
+        .nav-icon {
+          width: 20px;
+          // color: rgb(121, 174, 255);
+        }
+        .nav-destination  {
+          padding-left: 16px;
+        }
       }
     }
+  }
+
+  // &__sidebar {
+  //   width: 396px;
+  //   padding: 12px 48px;
+  //   // background-color: rgb(230,230,200);
+
+  //   .progress-calendar {
+  //     background-color: white;
+  //     margin-bottom: 20px;
+  //     &__heading {
+  //       height: 40px;
+  //       font-size: 18px;
+  //       color: #2b546a;
+  //       text-align: center;
+  //     }
+  //     &__day-heading {
+  //       width: 245px;
+  //       display: flex;
+  //       justify-content: flex-start;
+  //       margin-left: 55px;
+  //     }
+  //     p {
+  //       width: 30px;
+  //       color: rgba(43,84,106,0.6);
+  //       font-size: 14px;
+  //       text-align: center;
+  //       margin-left: 5px;
+  //     }
+  //     &__date {
+  //       display: flex;
+  //       justify-content: space-between;
+  //       &--month {
+  //         height: 175px;
+  //         width: 55px;
+  //         // background-color: rgba(255, 239, 146, 0.9);
+  //         line-height: 175px;
+  //         padding-left: 8px;
+  //       }
+  //       &--day {
+  //         display: flex;
+  //         justify-content: flex-end;
+  //         .row {
+  //           height: 30px;
+  //           width: 30px;
+  //           background-color: rgb(237,242,250);
+  //           margin-left: 5px;
+  //           margin-bottom: 5px;
+  //         }
+  //         .row:hover {
+  //           background-color: #b0f5e5;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .action-area {
+  //     height: 300px;
+  //     a {
+  //       display: block;
+  //       width: 240px;
+  //     }
+  //     .btn-container {
+  //       height: 50px;
+  //       margin: 10px 0px 0px 60px;
+  //       text-align: center;
+  //     }
+  //     .btn {
+  //       background-color: rgb(236, 108, 108);
+  //       color: white;
+  //       font-size: 14px;
+  //       cursor: pointer;
+  //       border-style: none;
+  //       border-radius: 5px;
+  //       box-shadow: 0px 5px rgb(202, 72, 72) ;
+  //       padding: 10px 0px;
+  //     }
+  //     .btn:hover {
+  //       opacity: 0.9;
+  //     }
+  //     .btn:active {
+  //       box-shadow: none;
+  //       position: relative;
+  //       top: 5px;
+  //     }
+  //     .btn:focus {
+  //       outline: none;
+  //     }
+  //   }
+  // }
+}
+
+
+.learning {
+  margin: 32px 32px 0px;
+  .heading {
+    color: gray;
+    font-size: 32px;
+    opacity: 0.6;
   }
 }
