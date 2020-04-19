@@ -7,7 +7,7 @@
         %p.nav-destination
           マイページ
     %li.nav-list
-      = link_to user_path(current_user.id), class: "user-navigation" do
+      = link_to learning_user_path(current_user.id), class: "user-navigation" do
         = icon('fas', 'tags', class: "nav-icon")
         %span<>
         %p.nav-destination

@@ -14,6 +14,7 @@ class TagsController < ApplicationController
 
   def register
   end
+
   
   private
   def tag_params
