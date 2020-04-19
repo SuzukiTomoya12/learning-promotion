@@ -1,8 +1,7 @@
-.register_tag
-  .registered
-    登録済みのタグ
+.users-header
+  = render 'users/shared/users-header'
 
-    = link_to "マイページに戻る", user_path(current_user.id)
-  .new_registration
-    タグの登録
+.user-page
+  = render 'users/shared/sidebar'
+  = render 'tags/shared/register-main'
 

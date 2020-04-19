@@ -1,13 +1,8 @@
-
-
-.register_tag {
-  @include flex-center();
-  .registered {
-    @include width-height(50%,100vh);
-    background-color: gray;
-  }
-  .new_registration {
-    @include width-height(50%,100vh);
-    background-color: aquamarine;
+.register-container {
+  margin: 32px 32px 0px;
+  .heading {
+    color: gray;
+    font-size: 32px;
+    opacity: 0.6;
   }
 }
