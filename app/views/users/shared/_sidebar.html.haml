@@ -19,7 +19,7 @@
         %p.nav-destination
           学習項目を登録する
     %li.nav-list
-      = link_to user_path(current_user.id), class: "user-navigation" do
+      = link_to report_path(current_user.id), class: "user-navigation" do
         = icon('fas', 'calendar', class: "nav-icon")
         %span<>
         %p.nav-destination

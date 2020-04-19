@@ -281,3 +281,16 @@
     background-color: rgb(200,200,200);
   }
 }
+
+
+
+
+// マイページ内のレポート作成履歴
+.report-show {
+  margin: 32px 32px 0px;
+  .heading {
+    color: gray;
+    font-size: 32px;
+    opacity: 0.6;
+  }
+}
