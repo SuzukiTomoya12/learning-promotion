@@ -1,8 +1,15 @@
-.register-container {
+.register-tag {
   margin: 32px 32px 0px;
-  .heading {
+  &__heading {
     color: gray;
     font-size: 32px;
     opacity: 0.6;
+  }
+  &__lists {
+    margin-top: 24px;
+    .tag-image {
+      @include width-height(280px,200px);
+      background-size: cover;
+    }
   }
 }
