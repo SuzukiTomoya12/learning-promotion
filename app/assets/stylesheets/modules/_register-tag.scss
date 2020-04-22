@@ -1,5 +1,6 @@
 .register-tag {
   margin: 32px 32px 0px;
+  width: calc(100% - 240px);
   &__heading {
     color: gray;
     font-size: 32px;
@@ -7,9 +8,12 @@
   }
   &__lists {
     margin-top: 24px;
-    .tag-image {
-      @include width-height(280px,200px);
-      background-size: cover;
+    &__tag-container {
+
+      &--image {
+        @include width-height(280px,200px);
+        background-size: cover;
+      }
     }
   }
 }
