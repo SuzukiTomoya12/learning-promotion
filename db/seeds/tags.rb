@@ -21,7 +21,7 @@ development_child_array = [
 
 development_grandchild_array = [
   [ # 開発 >> プログラミング
-  {name: "HTML/CSS", description: "Web上の見た目を作るマークアップ言語の1つ", image: "tags/development/hrml-css.png"},
+  {name: "HTML/CSS", description: "Web上の見た目を作るマークアップ言語の1つ", image: "tags/development/html-css.png"},
   {name: "Ruby", description: "直感的に理解しやすいサーバーサイド言語", image: "tags/development/ruby.png"},
   {name: "Ruby on Rails", description: "Webサービスの開発に用いるRubyのフレームワーク", image: "tags/development/rails.jpg"},
   {name: "Java Script", description: "Webに動きを付与することができるフロントエンド言語", image: "tags/development/javascript.png"},

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
   resources :reports, only: [:index, :new, :create, :show]
-  resources :tags, only: [:index, :new, :create] do
+  resources :tags, only: [:index] do
     collection do
       get :search, to: 'tags#search'
     end
