@@ -30,7 +30,7 @@ development_grandchild_array = [
   {name: "Laravel", description: "PHPの開発用フレームワーク", image: "tags/development/Laravel.png"},
   {name: "Java", description: "大規模な開発にも適している汎用的なプログラミング言語", image: "tags/development/java.png"},
   {name: "C", description: "モダンなプログラミング言語", image: "tags/development/C.png"},
-  {name: "C++", description: "モダンなプログラミング言語", image: "tags/development/C++.png"},
+  {name: "C++", description: "モダンなプログラミング言語", image: "tags/development/C-plus.png"},
   {name: "C#", description: "モダンなプログラミング言語", image: "tags/development/C#.png"},
   {name: "React", description: "サイトの見た目や動きを作る、世界的に人気上昇中のJava Scriptのライブラリ", image: "tags/development/React.png"},
   {name: "Swift", description: "iOSのアプリ開発に適したプログラミング言語", image: "tags/development/Swift.svg"},
