@@ -1,6 +1,16 @@
 .register-tag {
   margin: 32px 32px 0px;
   width: calc(100% - 240px);
+  height: 700px;
+  &__search {
+
+    .search-icon {
+      color: white;
+      padding: 5px;
+      background-color: $header-btn-color;
+      cursor: pointer;
+    }
+  }
   &__heading {
     color: gray;
     font-size: 32px;
@@ -9,10 +19,46 @@
   &__lists {
     margin-top: 24px;
     &__tag-container {
-
+      @include flex-start();
+      border: 1px solid $border-gray;
+      margin-top: 20px;
+      box-shadow: 0px 3px 2px rgb(220, 220, 220);
+      position: relative;
       &--image {
-        @include width-height(280px,200px);
-        background-size: cover;
+        // display: inline-block;
+        @include width-height(168px,120px);
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // object-fit: scale-down;
+      }
+      &--detail {
+        padding: 0 10px;
+        .tagname {
+          color: $main-font-color;
+          font-size: 18px;
+          font-weight: bold;
+          font-family: "Hiragino Maru Gothic Pro";
+        }
+        .description {
+          color: gray;
+          font-size: 14px;
+        }
+      }
+      &--regist {
+        @include width-height(96px,48px);
+        color: rgb(60,60,60);
+        margin-top: 40px;
+        background-color: $header-btn-color;
+        text-align: center;
+        line-height: 48px;
+        border-radius: 2px;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
