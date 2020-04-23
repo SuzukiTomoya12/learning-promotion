@@ -29,9 +29,9 @@ development_grandchild_array = [
   {name: "PHP", description: "Web開発に適した日本でも人気の高いサーバーサイド言語", image: "tags/development/php.png"},
   {name: "Laravel", description: "PHPの開発用フレームワーク", image: "tags/development/Laravel.png"},
   {name: "Java", description: "大規模な開発にも適している汎用的なプログラミング言語", image: "tags/development/java.png"},
-  {name: "C", description: "モダンなプログラミング言語", image: "tags/development/C.png"},
+  {name: "C", description: "モダンなプログラミング言語", image: "tags/development/C-natural.png"},
   {name: "C++", description: "モダンなプログラミング言語", image: "tags/development/C-plus.png"},
-  {name: "C#", description: "モダンなプログラミング言語", image: "tags/development/C#.png"},
+  {name: "C#", description: "モダンなプログラミング言語", image: "tags/development/C-sharp.png"},
   {name: "React", description: "サイトの見た目や動きを作る、世界的に人気上昇中のJava Scriptのライブラリ", image: "tags/development/React.png"},
   {name: "Swift", description: "iOSのアプリ開発に適したプログラミング言語", image: "tags/development/Swift.svg"},
   {name: "Go", description: "Googleによって開発された人気上昇中のプログラミング言語", image: "tags/development/Go.png"}
