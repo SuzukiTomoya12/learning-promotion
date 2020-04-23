@@ -9,23 +9,28 @@
     -#   作成されたレポートはまだありません。
     .register-tag__search
       %input.register-tag__search--input
-      = icon('fas', 'search', class: "user-icon")
+      = icon('fas', 'search', class: "search-icon")
+      %span<>
       -# = form_for (url: search_tags_path, local: true, method: :get) do |f|
       -#   = f.text_field :keyword, placeholder: "キーワードから探す", type: "text", class: "input-area"
       -#   %span<>
       -#   = button_tag type: :submit do
       -#     = icon('fas', 'search', class: "user-icon")
 
+    %h2.register-tag__heading
+      学習項目一覧
     .register-tag__lists
       - @tags.each do |i|
         .register-tag__lists__tag-container
           .register-tag__lists__tag-container--image
-            = image_tag asset_path(i.image), width: "100%", height: "100%", class: "tag-image"
+            = image_tag asset_path(i.image), alt: "No Image", width: "100%", height: "100%", class: "tag-image"
           .register-tag__lists__tag-container--detail
             .tagname
               = i.name
             .description
               = i.description
-          .register-tag__lists__tag-container--regist
-            -# = link_to register_tag_user_path do
-            -#   登録する
+          = form_tag(action: :register, method: :post) do
+            %p.register-tag__lists__tag-container--regist
+              -# = link_to register_tag_user_path(current_user.id) do
+              -#   登録する
+              登録する
