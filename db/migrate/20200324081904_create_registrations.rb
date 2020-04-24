@@ -1,6 +1,6 @@
-class CreateRegistration < ActiveRecord::Migration[5.0]
+class CreateRegistrations < ActiveRecord::Migration[5.0]
   def change
-    create_table :registration do |t|
+    create_table :registrations do |t|
 
       t.integer :level
       t.integer :exp

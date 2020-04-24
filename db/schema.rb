@@ -19,24 +19,24 @@ ActiveRecord::Schema.define(version: 20200412063212) do
     t.datetime "updated_at",                null: false
   end
 
-  create_table "possession", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "possessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "report_id"
     t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["report_id"], name: "index_possession_on_report_id", using: :btree
-    t.index ["tag_id"], name: "index_possession_on_tag_id", using: :btree
+    t.index ["report_id"], name: "index_possessions_on_report_id", using: :btree
+    t.index ["tag_id"], name: "index_possessions_on_tag_id", using: :btree
   end
 
-  create_table "registration", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "registrations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "level"
     t.integer  "exp"
     t.integer  "user_id"
     t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_registration_on_tag_id", using: :btree
-    t.index ["user_id"], name: "index_registration_on_user_id", using: :btree
+    t.index ["tag_id"], name: "index_registrations_on_tag_id", using: :btree
+    t.index ["user_id"], name: "index_registrations_on_user_id", using: :btree
   end
 
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 20200412063212) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  add_foreign_key "possession", "reports"
-  add_foreign_key "possession", "tags"
-  add_foreign_key "registration", "tags"
-  add_foreign_key "registration", "users"
+  add_foreign_key "possessions", "reports"
+  add_foreign_key "possessions", "tags"
+  add_foreign_key "registrations", "tags"
+  add_foreign_key "registrations", "users"
 end

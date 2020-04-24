@@ -7,8 +7,8 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   has_many :reports
-  has_many :users_tags
-  has_many :tags, through: :users_tags
+  has_many :registrations
+  has_many :tags, through: :registrations
   has_one  :experience_point
 
 end
