@@ -29,8 +29,8 @@
               = i.name
             .description
               = i.description
-          = form_tag(action: :register, method: :post) do
-            %p.register-tag__lists__tag-container--regist
+          = link_to regiter_tag_user_path(current_user.id), method: :POST do
+            %div{class:"register-tag__lists__tag-container--regist submit", id:"regist-#{i.id}"}
+              登録する
               -# = link_to register_tag_user_path(current_user.id) do
               -#   登録する
-              登録する

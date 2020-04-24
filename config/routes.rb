@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     member do
-      post :regiter_tag, to: 'tags#register'
+      post :regiter_tag, to: 'users#register'
       get :learning, to: 'users#learning'
     end
   end
