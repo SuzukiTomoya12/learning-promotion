@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     member do
-      post :regiter_tag, to: 'users#register'
+      post :register, defaults: { format: 'json' }
       get :learning, to: 'users#learning'
     end
   end

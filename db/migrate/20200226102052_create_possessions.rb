@@ -1,6 +1,6 @@
-class CreatePossession < ActiveRecord::Migration[5.0]
+class CreatePossessions < ActiveRecord::Migration[5.0]
   def change
-    create_table :possession do |t|
+    create_table :possessions do |t|
 
       t.references :report, foreign_key: true
       t.references :tag, foreign_key: true
