@@ -11,14 +11,14 @@ class UsersController < ApplicationController
     end
 
     def register
-      @registration = Registration.create(registration_params)
-      binding.pry
+      # 被らないようにする
+      @registration = Registration.new(user_id: current_user.id, tag_id: params[:tag_id])
+      initial_value
       if @registration.save
       else
         flash.now[:alert] = "失敗です。"
         redirect_to tags_path
       end
-      redirect_to controller: :tags, action: :index
     end
 
   private
@@ -35,8 +35,13 @@ class UsersController < ApplicationController
   #   @tags = Tag.all
   # end
 
-  def registration_params
-    params.permit(:tag_id).merge(user_id: current_user.id)
+  # def registration_params
+  #   params.permit(:tag_id).merge(user_id: current_user.id)
+  # end
+
+  def initial_value
+    @registration[:level] = 1
+    @registration[:exp] = 0
   end
 
 end
