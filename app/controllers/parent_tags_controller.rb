@@ -1,2 +1,0 @@
-class ParentTagsController < ApplicationController
-end

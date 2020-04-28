@@ -6,3 +6,8 @@
   .report-show
     %h2.heading
       作成されたレポートはまだありません。
+    .reports
+      - @report.each do |i|
+        = i.content
+        = i.tag_id
+        = i.created_at.strftime("%Y/%m/%d %H:%M")
