@@ -25,7 +25,6 @@
 
 .user-page {
   height: 700px;
-  width: 90%;
   display: flex;
   &__main {
     width: 60%;
@@ -313,6 +312,7 @@
 
 .learning {
   margin: 32px 32px 0px;
+  width: calc(100vw - 240px);
   .heading {
     color: gray;
     font-size: 32px;
