@@ -3,11 +3,14 @@
 
 .user-page
   = render 'users/shared/sidebar'
-  .report-show
-    %h2.heading
-      作成されたレポートはまだありません。
-    .reports
-      - @report.each do |i|
-        = i.content
-        = i.tag_id
-        = i.created_at.strftime("%Y/%m/%d %H:%M")
+
+  .report-show.user-page__main
+    - if @report.count == 0
+      %h2.heading
+        作成されたレポートはまだありません。
+    - else
+      .reports
+        - @report.each do |i|
+          = i.content
+          = i.tag_id
+          = i.created_at.strftime("%Y/%m/%d %H:%M")

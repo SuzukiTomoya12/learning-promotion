@@ -1,3 +1,4 @@
+// マイページのヘッダーのCSS
 .users-header {
   @include width-height(100%,64px);
   @include flex-between(center);
@@ -23,10 +24,55 @@
   }
 }
 
+
+
+
 .user-page {
   height: 700px;
   display: flex;
-  &__main {
+
+
+  // サイドバーのCSS
+  &__sidebar {
+    @include width-height(240px,700px);
+    background-color: rgb(250,250,250);
+    .user-page__sidebar--navigation {
+
+
+      // ------sidebar内、全てに共通のCSS---------
+      .nav-list {
+        height: 50px;
+        background-color: white;
+        border: 1px solid $border-gray;
+        border-top: none;
+        padding-left: 24px;
+        &:hover {
+          background-color: $link-after-hover;
+        }
+      }
+      .user-navigation {
+        text-decoration: none;
+        font-size: 15px;
+        @include flex-start();
+        .nav-icon,.nav-destination {
+          line-height: 50px;
+          color: rgb(100,100,100);
+        }
+        .nav-icon {
+          width: 20px;
+        }
+        .nav-destination  {
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+
+
+
+
+  // マイページのCSS
+  &__mypage {
     width: 60%;
     margin: 50px auto;
     .information {
@@ -113,8 +159,6 @@
           }
         }
       }
-      
-
       .icon-item {
         height: 20px;
         display: flex;
@@ -135,10 +179,8 @@
         }
         .icon:hover {
           color: rgb(55, 142, 230)
-
         }
       }
-      
       &__bottom {
         height: 200px;
         padding: 20px 0px 0px 40px;
@@ -178,47 +220,118 @@
 
 
 
-
-
-
-  &__sidebar {
-    @include width-height(280px,700px);
-    background-color: rgb(250,250,250);
-    .user-page__sidebar--navigation {
-
-
-      // ------sidebar内、全てに共通のCSS---------
-      .nav-list {
-        height: 50px;
-        background-color: white;
-        border: 1px solid $border-gray;
-        border-top: none;
-        padding-left: 24px;
-        &:hover {
-          background-color: $link-after-hover;
-        }
-      }
-      // .first-list {
-      //   border: 1px solid $border-gray;
-      // }
-      .user-navigation {
-        text-decoration: none;
-        font-size: 15px;
+  // マイページ内の学習中のタグ一覧画面
+  .learning {
+    margin: 32px 32px 0px;
+    // width: calc(100vw - 240px);
+    .heading {
+      color: gray;
+      font-size: 32px;
+      opacity: 0.6;
+    }
+    &__list {
+      &__tag-container {
         @include flex-start();
-        .nav-icon,.nav-destination {
-          line-height: 50px;
-          color: rgb(100,100,100);
+        border: 1px solid $border-gray;
+        margin-top: 20px;
+        box-shadow: 0px 3px 2px rgb(220, 220, 220);
+        // position: relative;
+        &--image {
+          @include width-height(168px,120px);
         }
-        .nav-icon {
-          width: 20px;
-          // color: rgb(121, 174, 255);
-        }
-        .nav-destination  {
-          padding-left: 16px;
+        &--detail {
+          @include width-height(400px,100%);
+          padding: 0 10px;
         }
       }
     }
   }
+
+
+  // マイページ内のタグ登録画面
+  .register-tag {
+    margin: 32px 32px 0px;
+    // width: calc(100% - 280px);
+    height: 700px;
+    &__search {
+  
+      .search-icon {
+        color: white;
+        padding: 5px;
+        background-color: $header-btn-color;
+        cursor: pointer;
+      }
+    }
+    &__heading {
+      color: gray;
+      font-size: 32px;
+      opacity: 0.6;
+    }
+    &__lists {
+      margin-top: 24px;
+      &__tag-container {
+        @include flex-start();
+        border: 1px solid $border-gray;
+        margin-top: 20px;
+        box-shadow: 0px 3px 2px rgb(220, 220, 220);
+        position: relative;
+        &--image {
+          // display: inline-block;
+          @include width-height(168px,120px);
+          // background-size: contain;
+          // background-repeat: no-repeat;
+          // object-fit: scale-down;
+        }
+        &--detail {
+          padding: 0 10px;
+          .tagname {
+            color: $main-font-color;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: "Hiragino Maru Gothic Pro";
+          }
+          .description {
+            color: gray;
+            font-size: 14px;
+          }
+        }
+        &--regist {
+          @include width-height(96px,48px);
+          color: rgb(60,60,60);
+          margin-top: 40px;
+          background-color: $header-btn-color;
+          text-align: center;
+          line-height: 48px;
+          border-radius: 2px;
+          position: absolute;
+          bottom: 16px;
+          right: 16px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+
+  // マイページ内のレポート作成履歴
+  .report-show {
+    // width: calc(100% - 280px);
+    margin: 32px 32px 0px;
+    .heading {
+      color: gray;
+      font-size: 32px;
+      opacity: 0.6;
+    }
+    .reports {
+      width: 400px;
+    }
+  }
+
+
+
 
   // &__sidebar {
   //   width: 396px;
@@ -309,13 +422,3 @@
   // }
 }
 
-
-.learning {
-  margin: 32px 32px 0px;
-  width: calc(100vw - 240px);
-  .heading {
-    color: gray;
-    font-size: 32px;
-    opacity: 0.6;
-  }
-}
