@@ -4,8 +4,25 @@
 .user-page
   = render 'users/shared/sidebar'
 
-  .learning
-    %h2.heading
-      学習中のカテゴリーはまだありません。
-
+  .learning.user-page__main
+    - if @learning.count == 0
+      %h2.heading
+        学習中のカテゴリーはまだありません。
+    - else
+      %h2.heading
+        学習中の項目一覧
+      .learning__list
+        - @learning.each do |i|
+          .learning__list__tag-container
+            .learning__list__tag-container--image
+              = image_tag asset_path("#{i.tag.image}"), width: "100%", height: "100%", class: "tag-image"
+            .learning__list__tag-container--detail
+              = i.tag.name
+              %span<>
+              %span.level Lv.
+              = i.level
+              %span<>
+              %span.exp 現在の経験値
+              = i.exp
+              %span<>
 

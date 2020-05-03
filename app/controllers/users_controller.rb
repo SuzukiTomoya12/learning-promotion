@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     end
 
     def learning
+      @learning = Registration.where(user_id: current_user.id).order('exp DESC')
     end
 
     def register
