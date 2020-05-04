@@ -14,15 +14,26 @@
       .learning__list
         - @learning.each do |i|
           .learning__list__tag-container
-            .learning__list__tag-container--image
+            .learning__list__tag-container__image
               = image_tag asset_path("#{i.tag.image}"), width: "100%", height: "100%", class: "tag-image"
-            .learning__list__tag-container--detail
-              = i.tag.name
-              %span<>
-              %span.level Lv.
-              = i.level
-              %span<>
-              %span.exp 現在の経験値
-              = i.exp
-              %span<>
+            .learning__list__tag-container__content
+              .learning__list__tag-container__content__top
+                .learning__list__tag-container__content__top--tagname
+                  = i.tag.name
+                  %span<>
+                .learning__list__tag-container__content__top--level
+                  %span.level Lv.
+                  = i.level
+                  %span<>
+              .learning__list__tag-container__content__middle
+                .learning__list__tag-container__content__middle--exp
+                  %span.exp 現在の経験値
+                  = i.exp
+                  %span<>
+                .learning__list__tag-container__content__middle--until
+                  %span.exp 次のレベルまで
+                  = i.exp
+                  %span<>
+              .learning__list__tag-container__content__bottom
+                .progress-bar
 
