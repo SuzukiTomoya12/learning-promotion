@@ -230,7 +230,9 @@
       opacity: 0.6;
     }
     &__list {
+      @include width-height(100%,500px);
       &__tag-container {
+        @include width-height(100%,122px);
         @include flex-start();
         border: 1px solid $border-gray;
         margin-top: 20px;
@@ -323,21 +325,26 @@
         }
         &--regist {
           @include width-height(96px,48px);
-          color: rgb(60,60,60);
-          margin-top: 40px;
-          background-color: $header-btn-color;
-          text-align: center;
-          line-height: 48px;
-          border-radius: 2px;
           position: absolute;
           bottom: 16px;
           right: 16px;
-          cursor: pointer;
-          &:hover {
-            opacity: 0.8;
-          }
         }
       }
+    }
+  }
+
+
+  // users/learning.hrml.haml & tags/index.html.haml 共通
+  .tag-btn {
+    color: rgb(60,60,60);
+    margin-top: 40px;
+    background-color: $header-btn-color;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 2px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
     }
   }
 
