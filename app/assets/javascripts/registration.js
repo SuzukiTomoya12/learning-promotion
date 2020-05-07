@@ -1,8 +1,9 @@
 $(function(){
-  $('.submit').on('click',function(){
+  $('.regist').on('click',function(){
     let tagId = $(this).attr('id');
     let userId = $('.user_id').attr('value');
     let url = `/users/${userId}/register`;
+    console.log(tagId);
     $.ajax({
       type: 'POST',
       url: url,
