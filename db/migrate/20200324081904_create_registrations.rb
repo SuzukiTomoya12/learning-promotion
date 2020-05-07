@@ -4,6 +4,7 @@ class CreateRegistrations < ActiveRecord::Migration[5.0]
 
       t.integer :level
       t.integer :exp
+      t.integer :until_next_level
       t.references :user, foreign_key: true
       t.references :tag, foreign_key: true
       t.timestamps
