@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 20200412063212) do
   create_table "registrations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "level"
     t.integer  "exp"
+    t.integer  "until_next_level"
     t.integer  "user_id"
     t.integer  "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["tag_id"], name: "index_registrations_on_tag_id", using: :btree
     t.index ["user_id"], name: "index_registrations_on_user_id", using: :btree
   end

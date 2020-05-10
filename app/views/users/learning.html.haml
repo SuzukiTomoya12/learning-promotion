@@ -27,13 +27,17 @@
                   %span<>
               .learning__list__tag-container__content__middle
                 .learning__list__tag-container__content__middle--exp
-                  %span.exp 現在の経験値
+                  %span.item 現在の経験値
                   = i.exp
                   %span<>
                 .learning__list__tag-container__content__middle--until
-                  %span.exp 次のレベルまで
-                  = i.exp
+                  %span.item 次のレベルまで
+                  = i.until_next_level
                   %span<>
               .learning__list__tag-container__content__bottom
                 .progress-bar
+            .learning__list__tag-container__report-link
+              = link_to new_report_path do
+                .tag-btn
+                  この項目で学習を始める
 
