@@ -257,9 +257,8 @@
             }
           }
           &__middle {
-            @include flex-start();
-            &--until {
-              margin-left: 24px;
+            .item {
+              margin-right: 24px;
             }
           }
           &__bottom {
