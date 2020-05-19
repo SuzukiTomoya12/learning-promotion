@@ -2,6 +2,10 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_tag, only: [:new]
   before_action :set_user, only: [:create]
+  before_action :find_tag, only: [:create]
+
+  before_action :prepare_user_level_up, only: [:level_up]
+  before_action :prepare_learning_level_up, only: [:level_up]
   # before_action :prepare_level_up, only: [:level_up]
 
   def index
@@ -15,7 +19,7 @@ class ReportsController < ApplicationController
     @report = Report.create(report_params)
     time_calculation
     @report.save
-
+    
     # ユーザーのステータスを更新
     get_exp
     get_coin
@@ -40,6 +44,10 @@ class ReportsController < ApplicationController
     @tags = Tag.all
   end
 
+  def find_tag
+    @learning = Registration.find_by(user_id: current_user.id, tag_id: report_params[:tag_id])
+  end
+
   def set_user
     @user = User.find(current_user.id)
   end
@@ -55,8 +63,22 @@ class ReportsController < ApplicationController
 
   # <現在の設定> 1分につき、2ポイントの経験値
   def get_exp
-    exp = @user.exp + 120 * @total_time
-    @user.update(exp: exp)
+    exp = 120 * @total_time
+    tag_exp = @learning.exp + exp
+    @learning.update(exp: tag_exp)
+    if (@learning.until_next_level - exp) <= 0
+      # 次のレベルの必要経験値を当て込む
+      prepare_learning_level_up
+      until_next_level = @until_learning_next - @learning.exp
+      # @learning.update(until_next_level: until_next_level)
+    else
+      until_next_level = @learning.until_next_level - exp
+    end
+    @learning.update(until_next_level: until_next_level)
+
+    
+    user_exp = @user.exp + exp
+    @user.update(exp: user_exp)
   end
 
   # <現在の設定> 100ポイント × 集中の割合
@@ -65,15 +87,28 @@ class ReportsController < ApplicationController
     @user.update(coin: coin)
   end
 
-  def prepare_level_up
-    @total_exp_of_next_level = ExperiencePoint.find_by(id: @user.level + 1)[:total_required_experience]
+  # 次のレベルに必要なそう獲得経験値を探してくる
+  def prepare_user_level_up
+    @until_user_next = ExperiencePoint.find_by(id: @user.level + 1)[:total_required_experience]
+  end
+
+  def prepare_learning_level_up
+    @until_learning_next = ExperiencePoint.find_by(id: @learning.level + 1)[:total_required_experience]
   end
 
   def level_up
-    prepare_level_up
-    while @user.exp > @total_exp_of_next_level do
+    # 学習中タグのレベルアップ
+    prepare_learning_level_up
+    while @learning.exp > @until_learning_next do
+      @learning.update(level: @learning.level + 1)
+      prepare_learning_level_up
+    end
+
+    # ユーザーのレベルアップ
+    prepare_user_level_up
+    while @user.exp > @until_user_next do
       @user.update(level: @user.level + 1)
-      prepare_level_up
+      prepare_user_level_up
     end
   end
 
