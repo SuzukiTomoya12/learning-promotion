@@ -78,6 +78,12 @@
       }
       &__main {
         margin-left: 20px;
+        .tags-select {
+          &:focus {
+            outline: none;
+            outline: solid 1.4px rgb(236, 108, 108);
+          }
+        }
       }
       &__tag-search {
         width: 300px;
