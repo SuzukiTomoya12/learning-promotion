@@ -3,10 +3,8 @@ class ReportsController < ApplicationController
   before_action :set_tag, only: [:new]
   before_action :set_user, only: [:create]
   before_action :find_tag, only: [:create]
-
-  before_action :prepare_user_level_up, only: [:level_up]
-  before_action :prepare_learning_level_up, only: [:level_up]
-  # before_action :prepare_level_up, only: [:level_up]
+  # before_action :prepare_user_level_up, only: [:level_up]
+  # before_action :prepare_learning_level_up, only: [:level_up]
 
   def index
   end
@@ -94,6 +92,10 @@ class ReportsController < ApplicationController
 
   def prepare_learning_level_up
     @until_learning_next = ExperiencePoint.find_by(id: @learning.level + 1)[:total_required_experience]
+  end
+
+  def update_required_exp
+    # 次のレベルの必要経験値を当て込む
   end
 
   def level_up
