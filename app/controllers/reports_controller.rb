@@ -3,8 +3,6 @@ class ReportsController < ApplicationController
   before_action :set_tag, only: [:new]
   before_action :set_user, only: [:create]
   before_action :find_tag, only: [:create]
-  # before_action :prepare_user_level_up, only: [:level_up]
-  # before_action :prepare_learning_level_up, only: [:level_up]
 
   def index
   end
