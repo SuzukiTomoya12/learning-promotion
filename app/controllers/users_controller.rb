@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   before_action :until_next_user_level, only: [:show]
-  # before_action :set_tag, only: [:register]
 
 
     def show
