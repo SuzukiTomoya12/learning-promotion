@@ -243,12 +243,13 @@
           @include width-height(168px,120px);
         }
         &__content {
-          @include width-height(600px,100%);
+          @include width-height(480px,100%);
+          color: rgb(40,40,40);
           padding: 0 10px;
           &__top {
             @include flex-start();
-            height: 40px;
-            line-height: 40px;
+            @include width-height(320px,48px);
+            line-height: 48px;
             &--tagname {
               width: 120px;
               font-family: "Hiragino Maru Gothic Pro";
@@ -258,18 +259,41 @@
             }
           }
           &__middle {
-            .item {
-              margin-right: 24px;
+            &--exp,&--until {
+              @include flex-between();
+              width: 240px;
+              height: 20px;
+            }
+            &--until {
+              margin-top: 4px;
+            }
+            .status {
+              font-size: 14px;
+            }
+            .title {
+            }
+            .point {
+              padding-right: 8px;
             }
           }
           &__bottom {
-            margin-top: 8px;
-            .progress-bar {
-              @include width-height(320px,10px);
-              border: 1px gray solid;
-              border-radius: 5px;
-              background-color: rgb(150,150,150);
+            margin-top: 4px;
+            .progress {
+              @include width-height(240px,10px);
               margin-right: 16px;
+              border: 1px solid $progressbar-frame;
+              border-radius: 4px;
+              background: linear-gradient(top, rgb(150,150,150), rgb(80,80,80));
+              background: linear-gradient(top, rgb(150,150,150),  rgb(80,80,80));
+              background: linear-gradient(to bottom, rgb(150,150,150) , rgb(80,80,80));
+              .progressbar {
+                width: 1%;
+                height: 100%;
+                border-radius: 3px;
+                background: linear-gradient(top, $progressbar-green, $progressbar-darkgreen);
+                background: linear-gradient(top, $progressbar-green, $progressbar-darkgreen);
+                background: linear-gradient(to bottom, $progressbar-green, $progressbar-darkgreen);
+              }
             }
           }
         }
@@ -290,6 +314,17 @@
             opacity: 0.7;
             background-color: $link-after-hover;
           }
+        }
+        .pulldownlist {
+          display: none;
+          @include width-height(32px,48px);
+          border: 1px solid gray;
+          font-size: 14px;
+
+          position: absolute;
+          right: -32px;
+          top: 8px;
+          z-index: 2;
         }
       }
     }
@@ -322,7 +357,6 @@
         box-shadow: 0px 3px 2px rgb(220, 220, 220);
         position: relative;
         &--image {
-          // display: inline-block;
           @include width-height(168px,120px);
           // background-size: contain;
           // background-repeat: no-repeat;
