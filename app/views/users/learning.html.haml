@@ -27,19 +27,24 @@
                   %span<>
               .learning__list__tag-container__content__middle
                 .learning__list__tag-container__content__middle--exp
-                  %span.item 現在の経験値
-                  = i.exp
-                  %span<>
+                  %span.status.title
+                    現在の経験値
+                  %span.status.point
+                    = i.exp
                 .learning__list__tag-container__content__middle--until
-                  %span.item 次のレベルまで
-                  = i.until_next_level
-                  %span<>
+                  %span.status.title
+                    次のレベルまで
+                  %span.status.point
+                    = i.until_next_level
               .learning__list__tag-container__content__bottom
-                .progress-bar
+                .progress
+                  .progressbar
             .learning__list__tag-container__report-link
               = link_to new_report_path do
                 .tag-btn
                   この項目で学習を始める
-            .learning__list__tag-container__menuicon
+            .learning__list__tag-container__menuicon.menu-icon
               = icon('fas', 'ellipsis-v', class: "menuicon")
+            .pulldownlist
+              削除
 
